@@ -26,50 +26,6 @@ const CDTmap = () => {
       .attr("stroke", "rgb(127, 127, 127)")
       .attr("stroke-width", "1px");
 
-    // Set up the zoom behavior
-    const CDTzoom = d3
-      .zoom()
-      .scaleExtent([1, 500]) // Limits of the zoom scale
-      // .on("zoom", handleZoom);
-      .on("zoom", (event) => {
-        const { transform } = event;
-        const scale = transform.k;
-
-        // d3.select("#CDTmap").attr("transform", transform);
-        CDTsvg.selectAll("circle").attr("transform", transform); // Apply transform on zoom
-        CDTsvg.selectAll("path").attr("transform", transform); // Apply transform on zoom
-        CDTsvg.selectAll("text").attr("transform", transform); // Apply transform on zoom
-        CDTsvg.selectAll("image").attr("transform", transform); // Apply transform on zoom
-        CDTsvg.selectAll("line").attr("transform", transform); // Apply transform on zoom
-
-        // Adjust point sizes inversely to zoom
-        d3.selectAll("circle").attr("r", 4 / scale);
-        labels.attr("font-size", 12 / scale);
-        d3.selectAll("line").attr("stroke-width", 1 / scale);
-        d3.selectAll(".trail").attr("stroke-width", 2 / scale);
-      });
-
-    function clicked(event, d) {
-      // Check if we’re already zoomed in on this state
-      const [[x0, y0], [x1, y1]] = path.bounds(d); // Get bounding box of the selected state
-      const dx = x1 - x0;
-      const dy = y1 - y0;
-      const x = (x0 + x1) / 2;
-      const y = (y0 + y1) / 2;
-      const scale = Math.max(
-        1,
-        Math.min(8, 0.9 / Math.max(dx / width, dy / height))
-      );
-      const translate = [width / 2 - scale * x, height / 2 - scale * y];
-
-      CDTsvg.transition()
-        .duration(750)
-        .call(
-          CDTzoom.transform,
-          d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
-        );
-    }
-
     /* -----------------------------------------------------
     *  Plotting route Data
     ----------------------------------------------------- */
@@ -174,7 +130,7 @@ const CDTmap = () => {
       .attr("cx", (d) => projection([d.lon, d.lat])[0])
       .attr("cy", (d) => projection([d.lon, d.lat])[1]);
 
-    const lines = cityGroup
+    cityGroup
       .selectAll("line")
       .data(cities)
       .enter()
@@ -200,6 +156,29 @@ const CDTmap = () => {
       .attr("fill", "black")
       .attr("stroke", "none");
 
+    // Set up the zoom behavior
+    const CDTzoom = d3
+      .zoom()
+      .scaleExtent([1, 500]) // Limits of the zoom scale
+      // .on("zoom", handleZoom);
+      .on("zoom", (event) => {
+        const { transform } = event;
+        const scale = transform.k;
+
+        // d3.select("#CDTmap").attr("transform", transform);
+        CDTsvg.selectAll("circle").attr("transform", transform); // Apply transform on zoom
+        CDTsvg.selectAll("path").attr("transform", transform); // Apply transform on zoom
+        CDTsvg.selectAll("text").attr("transform", transform); // Apply transform on zoom
+        CDTsvg.selectAll("image").attr("transform", transform); // Apply transform on zoom
+        CDTsvg.selectAll("line").attr("transform", transform); // Apply transform on zoom
+
+        // Adjust point sizes inversely to zoom
+        d3.selectAll("circle").attr("r", 4 / scale);
+        labels.attr("font-size", 12 / scale);
+        d3.selectAll("line").attr("stroke-width", 1 / scale);
+        d3.selectAll(".trail").attr("stroke-width", 2 / scale);
+      });
+
     CDTsvg.call(CDTzoom);
 
     // Add background click to reset zoom
@@ -211,6 +190,27 @@ const CDTmap = () => {
           .call(CDTzoom.transform, d3.zoomIdentity); // Reset zoom to initial state
       }
     });
+
+    function clicked(event, d) {
+      // Check if we’re already zoomed in on this state
+      const [[x0, y0], [x1, y1]] = path.bounds(d); // Get bounding box of the selected state
+      const dx = x1 - x0;
+      const dy = y1 - y0;
+      const x = (x0 + x1) / 2;
+      const y = (y0 + y1) / 2;
+      const scale = Math.max(
+        1,
+        Math.min(8, 0.9 / Math.max(dx / width, dy / height))
+      );
+      const translate = [width / 2 - scale * x, height / 2 - scale * y];
+
+      CDTsvg.transition()
+        .duration(750)
+        .call(
+          CDTzoom.transform,
+          d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
+        );
+    }
   }, []); // run once on mount
 
   return <svg ref={ref}></svg>;
