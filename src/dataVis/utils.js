@@ -47,9 +47,10 @@ export function handleMouseOver(event, d) {
     const { type } = d.geometry;
     if (type === "Point") {
       // inreach data point, display its date
+      const { MessageText } = d.properties;
       const messageDate = new Date(d.properties.GPSTime);
       const messageDateString = dateTimeFormatter.format(messageDate);
-      tooltip.innerHTML = ` <p>Message Date: ${messageDateString}<p>`;
+      tooltip.innerHTML = ` <p>Message Date: ${messageDateString}</p><br /><p>${MessageText}</p>`;
       tooltip.style.display = "block";
     } else if (type === "LineString") {
       // trail route, display it's leg name
