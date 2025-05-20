@@ -18,7 +18,7 @@ const CDTmap = () => {
     // Clear previous chart if any
     d3.select(ref.current).selectAll("*").remove();
 
-    const CDTsvg = d3
+    const svg = d3
       .select(ref.current)
       .attr("id", "CDTmap")
       .attr("width", width)
@@ -31,7 +31,8 @@ const CDTmap = () => {
     ----------------------------------------------------- */
     d3.json("/CDT_border_to_lincoln.json").then((data) => {
       // Plot the points
-      CDTsvg.selectAll(".trail")
+      svg
+        .selectAll(".trail")
         .data(data.features)
         .enter()
         .append("path")
@@ -61,7 +62,8 @@ const CDTmap = () => {
       });
 
       // Plot the points
-      CDTsvg.selectAll(".points")
+      svg
+        .selectAll(".points")
         .data(validPoints)
         .enter()
         .append("circle")
@@ -81,7 +83,8 @@ const CDTmap = () => {
     ----------------------------------------------------- */
     // geojson data from: https://github.com/johan/world.geo.json/tree/master
     d3.json("CDTstates.json").then((data) => {
-      CDTsvg.selectAll(".state")
+      svg
+        .selectAll(".state")
         .data(data.features)
         .enter()
         .append("path")
@@ -102,7 +105,8 @@ const CDTmap = () => {
         const projected = projection([d.longitude, d.latitude]);
         return projected != null;
       });
-      CDTsvg.selectAll(".photoPoints")
+      svg
+        .selectAll(".photoPoints")
         .data(validPoints)
         .enter()
         .append("circle")
@@ -117,7 +121,7 @@ const CDTmap = () => {
         .on("mouseout", handleMouseOut);
     });
 
-    const cityGroup = CDTsvg.append("g").attr("class", "cities");
+    const cityGroup = svg.append("g").attr("class", "cities");
 
     cityGroup
       .selectAll("circle")
@@ -156,42 +160,8 @@ const CDTmap = () => {
       .attr("fill", "black")
       .attr("stroke", "none");
 
-    // Set up the zoom behavior
-    const CDTzoom = d3
-      .zoom()
-      .scaleExtent([1, 500]) // Limits of the zoom scale
-      // .on("zoom", handleZoom);
-      .on("zoom", (event) => {
-        const { transform } = event;
-        const scale = transform.k;
-
-        // d3.select("#CDTmap").attr("transform", transform);
-        CDTsvg.selectAll("circle").attr("transform", transform); // Apply transform on zoom
-        CDTsvg.selectAll("path").attr("transform", transform); // Apply transform on zoom
-        CDTsvg.selectAll("text").attr("transform", transform); // Apply transform on zoom
-        CDTsvg.selectAll("image").attr("transform", transform); // Apply transform on zoom
-        CDTsvg.selectAll("line").attr("transform", transform); // Apply transform on zoom
-
-        // Adjust point sizes inversely to zoom
-        d3.selectAll("circle").attr("r", 4 / scale);
-        labels.attr("font-size", 12 / scale);
-        d3.selectAll("line").attr("stroke-width", 1 / scale);
-        d3.selectAll(".trail").attr("stroke-width", 2 / scale);
-      });
-
-    CDTsvg.call(CDTzoom);
-
-    // Add background click to reset zoom
-    CDTsvg.on("click", (event) => {
-      if (event.target.tagName !== "path") {
-        // Check if clicked outside a state
-        CDTsvg.transition()
-          .duration(750)
-          .call(CDTzoom.transform, d3.zoomIdentity); // Reset zoom to initial state
-      }
-    });
-
     function clicked(event, d) {
+      console.log({ d });
       // Check if we’re already zoomed in on this state
       const [[x0, y0], [x1, y1]] = path.bounds(d); // Get bounding box of the selected state
       const dx = x1 - x0;
@@ -204,13 +174,47 @@ const CDTmap = () => {
       );
       const translate = [width / 2 - scale * x, height / 2 - scale * y];
 
-      CDTsvg.transition()
+      svg
+        .transition()
         .duration(750)
         .call(
-          CDTzoom.transform,
+          zoom.transform,
           d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
         );
     }
+
+    // Set up the zoom behavior
+    const zoom = d3
+      .zoom()
+      .scaleExtent([1, 500]) // Limits of the zoom scale
+      // .on("zoom", handleZoom);
+      .on("zoom", (event) => {
+        const { transform } = event;
+        const scale = transform.k;
+
+        // d3.select("#CDTmap").attr("transform", transform);
+        svg.selectAll("circle").attr("transform", transform); // Apply transform on zoom
+        svg.selectAll("path").attr("transform", transform); // Apply transform on zoom
+        svg.selectAll("text").attr("transform", transform); // Apply transform on zoom
+        svg.selectAll("image").attr("transform", transform); // Apply transform on zoom
+        svg.selectAll("line").attr("transform", transform); // Apply transform on zoom
+
+        // Adjust point sizes inversely to zoom
+        d3.selectAll("circle").attr("r", 4 / scale);
+        labels.attr("font-size", 12 / scale);
+        d3.selectAll("line").attr("stroke-width", 1 / scale);
+        d3.selectAll(".trail").attr("stroke-width", 2 / scale);
+      });
+
+    svg.call(zoom);
+
+    // Add background click to reset zoom
+    svg.on("click", (event) => {
+      if (event.target.tagName !== "path") {
+        // Check if clicked outside a state
+        svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity); // Reset zoom to initial state
+      }
+    });
   }, []); // run once on mount
 
   return <svg ref={ref}></svg>;
