@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { auth, onAuthStateChanged } from "./firebase";
 
+import LoginForm from "./components/LoginForm";
 import CDTmap from "./dataVis/CDTmap.js";
 
 import "./App.css";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (u) => {
+      setUser(u);
+    });
+    return () => unsubscribe();
+  }, []);
   return (
     <>
       <h1>My CDT Trail Journal</h1>
@@ -26,10 +36,9 @@ function App() {
         <p>click and drag to pan</p>
         <p>click outside state lines to reset zoom</p>
         <p>hover over the photo points to see the photo</p>
-        {/* <script src="dataCleaning.js"></script>
-        <script src="code.js"></script> */}
       </section>
-      <CDTmap />
+      <LoginForm user={user} />
+      <CDTmap user={user} />
       <div id="tooltip"></div>
     </>
   );

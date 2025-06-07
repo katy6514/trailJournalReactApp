@@ -11,8 +11,10 @@ import {
   handleMouseOut,
 } from "./utils.js";
 
-const CDTmap = () => {
+const CDTmap = ({ user }) => {
   const ref = useRef();
+
+  console.log({ user });
 
   // ✅ Define projection + path WITHIN component and memoize
   const projection = useMemo(() => {
@@ -56,38 +58,6 @@ const CDTmap = () => {
         svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
       }
     });
-
-    // // Set up the zoom behavior
-    // const zoom = d3
-    //   .zoom()
-    //   .scaleExtent([1, 500]) // Limits of the zoom scale
-    //   .on("zoom", (event) => {
-    //     const { transform } = event;
-    //     const scale = transform.k;
-
-    //     // d3.select("#CDTmap").attr("transform", transform);
-    //     svg.selectAll("circle").attr("transform", transform); // Apply transform on zoom
-    //     svg.selectAll("path").attr("transform", transform); // Apply transform on zoom
-    //     svg.selectAll("text").attr("transform", transform); // Apply transform on zoom
-    //     svg.selectAll("image").attr("transform", transform); // Apply transform on zoom
-    //     svg.selectAll("line").attr("transform", transform); // Apply transform on zoom
-
-    //     // Adjust point sizes inversely to zoom
-    //     d3.selectAll("circle").attr("r", 4 / scale);
-    //     labels.attr("font-size", 12 / scale);
-    //     d3.selectAll("line").attr("stroke-width", 1 / scale);
-    //     d3.selectAll(".trail").attr("stroke-width", 2 / scale);
-    //   });
-
-    // svg.call(zoom);
-
-    // // Add background click to reset zoom
-    // svg.on("click", (event) => {
-    //   if (!event.target.classList.contains("state-clickable")) {
-    //     // Check if clicked outside a state
-    //     svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity); // Reset zoom to initial state
-    //   }
-    // });
 
     /* -----------------------------------------------------
     *  State outline mapping functionality
@@ -181,24 +151,26 @@ const CDTmap = () => {
     /* -----------------------------------------------------
     *  Take the cleaned photo geojson data and plot it
     ----------------------------------------------------- */
-    d3.json("photoData.json").then((photoData) => {
-      const validPoints = photoData.filter((d) =>
-        projection([d.longitude, d.latitude])
-      );
-      g.selectAll(".photoPoints")
-        .data(validPoints)
-        .enter()
-        .append("circle")
-        .attr("class", "photoPoints")
-        .attr("cx", (d) => projection([d.longitude, d.latitude])[0])
-        .attr("cy", (d) => projection([d.longitude, d.latitude])[1])
-        .attr("r", 4)
-        .attr("fill", "green")
-        .attr("stroke", "none")
-        .on("mouseover", handleMouseOver)
-        .on("mousemove", handleMouseMove)
-        .on("mouseout", handleMouseOut);
-    });
+    if (user) {
+      d3.json("photoData.json").then((photoData) => {
+        const validPoints = photoData.filter((d) =>
+          projection([d.longitude, d.latitude])
+        );
+        g.selectAll(".photoPoints")
+          .data(validPoints)
+          .enter()
+          .append("circle")
+          .attr("class", "photoPoints")
+          .attr("cx", (d) => projection([d.longitude, d.latitude])[0])
+          .attr("cy", (d) => projection([d.longitude, d.latitude])[1])
+          .attr("r", 4)
+          .attr("fill", "green")
+          .attr("stroke", "none")
+          .on("mouseover", handleMouseOver)
+          .on("mousemove", handleMouseMove)
+          .on("mouseout", handleMouseOut);
+      });
+    }
 
     /* -----------------------------------------------------
     *  City data
@@ -242,7 +214,7 @@ const CDTmap = () => {
       .attr("text-anchor", (d) => (d.dx <= 0 ? "end" : "start"))
       .attr("fill", "black")
       .attr("stroke", "none");
-  }, [path, projection]); // run once on mount
+  }, [path, projection, user]);
 
   return <svg ref={ref}></svg>;
 };

@@ -37,7 +37,7 @@ export function checkForCampsite(data) {
  */
 
 export function handleMouseOver(event, d) {
-  //   console.log(this);
+  // console.log(user)/;
   if (!d) {
     return;
   }
