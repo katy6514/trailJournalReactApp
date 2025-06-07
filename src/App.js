@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { auth, onAuthStateChanged } from "./firebase";
+import { signOut } from "firebase/auth";
 
 import LoginForm from "./components/LoginForm";
 import LoginDialog from "./components/LoginDialog";
@@ -14,12 +15,18 @@ function App() {
     });
     return () => unsubscribe();
   }, []);
+
+  const WelcomeMessage = ({ user }) => (
+    <>
+      <p>Welcome, {user.email}</p>
+      <button onClick={() => signOut(auth)}>Sign Out</button>
+    </>
+  );
+
   return (
     <>
-      <p>It's still very much a work in progress! </p>
+      {user ? <WelcomeMessage user={user} /> : <LoginDialog />}
 
-      <LoginForm user={user} />
-      <LoginDialog />
       <CDTmap user={user} />
       <div id="tooltip"></div>
     </>

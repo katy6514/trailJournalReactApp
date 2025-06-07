@@ -5,6 +5,12 @@ import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 const LoginForm = ({ user }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const handleLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password).catch((err) =>
+      alert(err.message)
+    );
+  };
 
   if (user) {
     return (
@@ -14,13 +20,6 @@ const LoginForm = ({ user }) => {
       </div>
     );
   }
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password).catch((err) =>
-      alert(err.message)
-    );
-  };
 
   return (
     <form onSubmit={handleLogin}>
