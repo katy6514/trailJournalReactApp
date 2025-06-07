@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useMemo } from "react";
+
 import * as d3 from "d3";
 
 import { width, height, cities } from "./constants.js";
