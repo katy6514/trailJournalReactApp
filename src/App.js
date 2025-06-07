@@ -4,8 +4,6 @@ import { auth, onAuthStateChanged } from "./firebase";
 import LoginForm from "./components/LoginForm";
 import CDTmap from "./dataVis/CDTmap.js";
 
-import "./App.css";
-
 function App() {
   const [user, setUser] = useState(null);
 
