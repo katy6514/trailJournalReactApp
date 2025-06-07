@@ -214,6 +214,91 @@ const CDTmap = ({ user }) => {
       .attr("text-anchor", (d) => (d.dx <= 0 ? "end" : "start"))
       .attr("fill", "black")
       .attr("stroke", "none");
+
+    /* -----------------------------------------------------
+ *  Legend
+ ----------------------------------------------------- */
+    g.append("circle")
+      .attr("cx", 100)
+      .attr("cy", 430)
+      .attr("r", 6)
+      .style("fill", "red")
+      .style("stroke", "none");
+    g.append("circle")
+      .attr("cx", 100)
+      .attr("cy", 460)
+      .attr("r", 6)
+      .style("fill", "blue")
+      .style("stroke", "none");
+    g.append("circle")
+      .attr("cx", 100)
+      .attr("cy", 490)
+      .attr("r", 6)
+      .style("fill", "green")
+      .style("stroke", "none");
+    g.append("circle")
+      .attr("cx", 100)
+      .attr("cy", 520)
+      .attr("r", 6)
+      .style("fill", "black")
+      .style("stroke", "none");
+    g.append("line")
+      .attr("x1", 90)
+      .attr("x2", 110)
+      .attr("y1", 550)
+      .attr("y2", 550)
+      .attr("stroke", "blue") // Set the line color
+      .attr("stroke-width", 3); // Set the line width
+    g.append("line")
+      .attr("x1", 90)
+      .attr("x2", 110)
+      .attr("y1", 580)
+      .attr("y2", 580)
+      .attr("stroke", "orange") // Set the line color
+      .attr("stroke-width", 3); // Set the line width
+
+    g.append("text")
+      .attr("x", 120)
+      .attr("y", 430)
+      .text("Garmin Message Sent")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle")
+      .style("font-family", "Open Sans");
+    g.append("text")
+      .attr("x", 120)
+      .attr("y", 460)
+      .text("Campsite Location")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle")
+      .style("font-family", "Open Sans");
+    g.append("text")
+      .attr("x", 120)
+      .attr("y", 490)
+      .text("Photo Location")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle")
+      .style("font-family", "Open Sans");
+    g.append("text")
+      .attr("x", 120)
+      .attr("y", 520)
+      .text("Resupply Stops")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle")
+      .style("font-family", "Open Sans");
+    g.append("text")
+      .attr("x", 120)
+      .attr("y", 550)
+      .text("Even days")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle")
+      .style("font-family", "Open Sans");
+    g.append("text")
+      .attr("x", 120)
+      .attr("y", 580)
+      .text("Odd days")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle")
+      .style("font-family", "Open Sans");
   }, [path, projection, user]);
 
   return <svg ref={ref}></svg>;
