@@ -48,7 +48,10 @@ const CDTmap = ({ user }) => {
         g.selectAll("circle").attr("r", 4 / event.transform.k);
         g.selectAll("text").attr("font-size", 12 / event.transform.k);
         g.selectAll("line").attr("stroke-width", 1 / event.transform.k);
-        g.selectAll(".trail").attr("stroke-width", 2 / event.transform.k);
+        g.selectAll(".uploadedTrail").attr(
+          "stroke-width",
+          2 / event.transform.k
+        );
       });
 
     svg.call(zoom);
@@ -98,25 +101,6 @@ const CDTmap = ({ user }) => {
             );
         });
     });
-
-    /* -----------------------------------------------------
-    *  Plotting route Data
-    ----------------------------------------------------- */
-    // d3.json("/CDT_border_to_lincoln.json").then((trailData) => {
-    //   // Plot the points
-    //   g.selectAll(".trail")
-    //     .data(trailData.features)
-    //     .enter()
-    //     .append("path")
-    //     .attr("class", "trail")
-    //     .attr("d", path)
-    //     .attr("stroke", (d) => getAlternatingColor(d.properties))
-    //     .attr("stroke-width", 1)
-    //     .attr("fill", "none")
-    //     .on("mouseover", handleMouseOver)
-    //     .on("mousemove", handleMouseMove)
-    //     .on("mouseout", handleMouseOut);
-    // });
 
     /* -----------------------------------------------------
     *  Plotting Garmin Data
@@ -301,6 +285,10 @@ const CDTmap = ({ user }) => {
       .style("font-family", "Open Sans");
   }, [path, projection, user]);
 
+  /* -----------------------------------------------------
+    *  Plotting route Data
+    ----------------------------------------------------- */
+
   useEffect(() => {
     if (!projection || !path) return;
 
@@ -330,27 +318,14 @@ const CDTmap = ({ user }) => {
         .attr("d", path)
         .attr("stroke", (d) => getAlternatingColor(d.properties))
         .attr("stroke-width", 1)
-        .attr("fill", "none");
+        .attr("fill", "none")
+        .on("mouseover", handleMouseOver)
+        .on("mousemove", handleMouseMove)
+        .on("mouseout", handleMouseOut);
     };
 
     fetchTrails();
   }, [db, projection, path]);
-
-  // d3.json("/CDT_border_to_lincoln.json").then((trailData) => {
-  //   // Plot the points
-  //   g.selectAll(".trail")
-  //     .data(trailData.features)
-  //     .enter()
-  //     .append("path")
-  //     .attr("class", "trail")
-  //     .attr("d", path)
-  //     .attr("stroke", (d) => getAlternatingColor(d.properties))
-  //     .attr("stroke-width", 1)
-  //     .attr("fill", "none")
-  //     .on("mouseover", handleMouseOver)
-  //     .on("mousemove", handleMouseMove)
-  //     .on("mouseout", handleMouseOut);
-  // });
 
   return <svg ref={ref}></svg>;
 };

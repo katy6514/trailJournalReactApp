@@ -3,6 +3,7 @@ import { auth, onAuthStateChanged } from "./firebase";
 
 import MapSection from "./components/MapSection.js";
 import UploadSection from "./components/UploadSection.js";
+import TrailsSection from "./components/TrailsSection.js";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -18,7 +19,7 @@ function App() {
     <>
       <MapSection user={user} />
       <UploadSection user={user} />
-      {/* <TrailsSection user={user} /> */}
+      <TrailsSection />
     </>
   );
 }
