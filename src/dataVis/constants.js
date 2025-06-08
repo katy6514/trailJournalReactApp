@@ -5,6 +5,15 @@ export const dateTimeFormatter = new Intl.DateTimeFormat("en-US", {
   dateStyle: "medium",
 });
 
+export const dataTypes = {
+  garminMessages: "Garmin Messages",
+  photo: "Photo",
+  trail: "Trail",
+  video: "Video",
+  journal: "Journal",
+  campsite: "Campsite",
+};
+
 export const cities = [
   {
     name: "CDT Northern Terminus",

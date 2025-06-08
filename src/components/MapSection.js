@@ -1,5 +1,5 @@
 import CDTmap from "../dataVis/CDTmap";
-import LoginDialog from "./LoginDialog";
+import LoginForm from "./LoginForm";
 import { auth, onAuthStateChanged } from "../firebase";
 import { signOut } from "firebase/auth";
 
@@ -40,7 +40,7 @@ export default function MapSection({ user }) {
             <div class="content">
               {/* <h4>Given credentials to login?</h4>
               <p>Sign in below to see more</p> */}
-              {user ? <WelcomeMessage user={user} /> : <LoginDialog />}
+              {user ? <WelcomeMessage user={user} /> : <LoginForm />}
             </div>
           </section>
         </div>
