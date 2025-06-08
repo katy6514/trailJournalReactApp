@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { auth, onAuthStateChanged } from "./firebase";
-import { signOut } from "firebase/auth";
 
-import LoginForm from "./components/LoginForm";
-import LoginDialog from "./components/LoginDialog";
-import CDTmap from "./dataVis/CDTmap.js";
+import MapSection from "./components/MapSection.js";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -16,18 +13,9 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  const WelcomeMessage = ({ user }) => (
-    <>
-      <p>Welcome, {user.email}</p>
-      <button onClick={() => signOut(auth)}>Sign Out</button>
-    </>
-  );
-
   return (
     <>
-      {user ? <WelcomeMessage user={user} /> : <LoginDialog />}
-
-      <CDTmap user={user} />
+      <MapSection user={user} />
       <div id="tooltip"></div>
     </>
   );

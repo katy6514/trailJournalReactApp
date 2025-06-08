@@ -1,4 +1,4 @@
-export const width = 1000;
+export const width = 900;
 export const height = 700;
 
 export const dateTimeFormatter = new Intl.DateTimeFormat("en-US", {

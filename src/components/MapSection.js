@@ -1,0 +1,39 @@
+import CDTmap from "../dataVis/CDTmap";
+import LoginDialog from "./LoginDialog";
+import { auth, onAuthStateChanged } from "../firebase";
+import { signOut } from "firebase/auth";
+
+export default function MapSection({ user }) {
+  const WelcomeMessage = ({ user }) => (
+    <>
+      <p>Welcome, {user.email}</p>
+      <button onClick={() => signOut(auth)}>Sign Out</button>
+    </>
+  );
+  return (
+    <section class="wrapper style1 align-center">
+      <div class="inner">
+        <h2>The Map</h2>
+
+        <div class="index align-left">
+          <section>
+            <header>
+              <h3>Helpful Hints</h3>
+              {user ? <WelcomeMessage user={user} /> : <LoginDialog />}
+            </header>
+            <div class="content">
+              <ul>
+                <li>Click once to zoom in on a state</li>
+                <li>double click to increase zoom</li>
+                <li>click and drag to pan</li>
+                <li>click outside state lines to reset zoom</li>
+                <li>hover over the photo points to see the photo</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <CDTmap user={user} />
+      </div>
+    </section>
+  );
+}
