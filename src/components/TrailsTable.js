@@ -25,37 +25,14 @@ const TrailTable = () => {
         id: doc.id,
         ...doc.data(),
       }));
-      const { featuresJson } = trailList[0];
-      console.log(featuresJson);
+      const { featuresJson } = trailList[trailList.length - 1]; // Get the last uploaded trail dataset
+      //   console.log(featuresJson);
       const parsedFeatures = JSON.parse(featuresJson);
       setTrails(parsedFeatures);
     };
 
     fetchTrails();
   }, []);
-
-  const computeTrailLength = (trailGeometry) => {
-    const coords = trailGeometry?.coordinates || [];
-    let totalMiles = 0;
-    // try {
-    //   const features = JSON.parse(featuresJson);
-    //   features.forEach((f) => {
-    // const coords = f.geometry?.coordinates || [];
-    for (let i = 0; i < coords.length - 1; i++) {
-      totalMiles += haversineDistance(coords[i], coords[i + 1]);
-    }
-    //   });
-    // } catch (e) {
-    //   console.error("Invalid JSON in featuresJson:", e);
-    // }
-    return totalMiles;
-  };
-
-  const updateTrailLength = async (trailId, length) => {
-    const ref = doc(db, "trails", trailId);
-    await updateDoc(ref, { length });
-    alert(`Updated trail ${trailId} with length ${length.toFixed(2)} mi`);
-  };
 
   return (
     <div>
@@ -66,13 +43,10 @@ const TrailTable = () => {
             <th>Title</th>
             <th>Date Hiked</th>
             <th>Miles</th>
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {trails.map((trail) => {
-            const length =
-              trail.length ?? computeTrailLength(trail.geometry || "[]");
             return (
               <tr key={trail.id}>
                 <td>{trail.properties.description || "(untitled)"}</td>
@@ -81,12 +55,7 @@ const TrailTable = () => {
                     ? trail.createdAt.toDate().toLocaleString()
                     : "N/A"}
                 </td>
-                <td>{length.toFixed(2)}</td>
-                <td>
-                  <button onClick={() => updateTrailLength(trail.id, length)}>
-                    Save Length
-                  </button>
-                </td>
+                <td>{trail.properties.length}</td>
               </tr>
             );
           })}

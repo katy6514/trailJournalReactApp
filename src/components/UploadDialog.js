@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase"; // your firebase.js setup
+import { haversineDistance } from "../dataVis/utils.js"; // utility function to compute distance
 
 export default function FormDialog({ uploadType, user }) {
   const [open, setOpen] = useState(false);
@@ -20,6 +18,15 @@ export default function FormDialog({ uploadType, user }) {
     setOpen(false);
   };
 
+  const computeTrailLength = (trailGeometry) => {
+    const coords = trailGeometry?.coordinates || [];
+    let totalMiles = 0;
+    for (let i = 0; i < coords.length - 1; i++) {
+      totalMiles += haversineDistance(coords[i], coords[i + 1]);
+    }
+    return totalMiles;
+  };
+
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (!file || file.type !== "application/json") return;
@@ -28,14 +35,26 @@ export default function FormDialog({ uploadType, user }) {
     reader.onload = async (event) => {
       try {
         const parsed = JSON.parse(event.target.result);
+        const { features } = parsed;
+
+        const updatedFeatures = features.map((feature) => {
+          const lengthInMiles = computeTrailLength(feature.geometry);
+          return {
+            ...feature,
+            properties: {
+              ...feature.properties,
+              length: lengthInMiles.toFixed(2),
+            },
+          };
+        });
 
         // ✅ Save to Firestore if you're the allowed user
         if (user?.email === "katy@gmail.com") {
           await addDoc(collection(db, "trails"), {
-            title: parsed.properties?.title || "Uploaded Trail",
+            title: parsed.properties?.title || "Uploaded Trail Collection",
             uploadedBy: user.email,
             createdAt: serverTimestamp(),
-            featuresJson: JSON.stringify(parsed.features),
+            featuresJson: JSON.stringify(updatedFeatures),
           });
           alert("Trail uploaded!");
         } else {
