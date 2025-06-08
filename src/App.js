@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { auth, onAuthStateChanged } from "./firebase";
 
 import MapSection from "./components/MapSection.js";
+import UploadSection from "./components/UploadSection.js";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <MapSection user={user} />
+      <UploadSection user={user} />
     </>
   );
 }
