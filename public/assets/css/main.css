@@ -2110,7 +2110,7 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
-		font-size: 0.75rem;
+		font-size: 0.85rem;
 		max-width: 20rem;
 		height: 3.75em;
 		line-height: 3.75em;
@@ -2196,8 +2196,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 1px #47D3E5;
-			color: #47D3E5 !important;
+			box-shadow: inset 0 0 0 1px #3267fa;
+			color: #3267fa !important;
 		}
 
 		input[type="submit"]:active,
@@ -2206,8 +2206,8 @@ input, select, textarea {
 		button:active,
 		.button:active {
 			background-color: rgba(71, 211, 229, 0.2);
-			box-shadow: inset 0 0 0 1px #47D3E5;
-			color: #47D3E5 !important;
+			box-shadow: inset 0 0 0 1px #3267fa;
+			color: #3267fa !important;
 		}
 
 		input[type="submit"].primary,
@@ -2225,7 +2225,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #47D3E5;
+				background-color: #3267fa;
 			}
 
 			input[type="submit"].primary:active,
