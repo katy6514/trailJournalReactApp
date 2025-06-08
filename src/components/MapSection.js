@@ -19,7 +19,6 @@ export default function MapSection({ user }) {
           <section>
             <header>
               <h3>Helpful Hints</h3>
-              {user ? <WelcomeMessage user={user} /> : <LoginDialog />}
             </header>
             <div class="content">
               <ul>
@@ -33,6 +32,18 @@ export default function MapSection({ user }) {
           </section>
         </div>
         <CDTmap user={user} />
+        <div class="index align-left">
+          <section>
+            <header>
+              <h3>Sign In</h3>
+            </header>
+            <div class="content">
+              {/* <h4>Given credentials to login?</h4>
+              <p>Sign in below to see more</p> */}
+              {user ? <WelcomeMessage user={user} /> : <LoginDialog />}
+            </div>
+          </section>
+        </div>
       </div>
     </section>
   );
