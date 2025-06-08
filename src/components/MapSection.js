@@ -45,6 +45,7 @@ export default function MapSection({ user }) {
           </section>
         </div>
       </div>
+      <div id="tooltip"></div>
     </section>
   );
 }

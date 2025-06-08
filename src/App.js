@@ -16,7 +16,6 @@ function App() {
   return (
     <>
       <MapSection user={user} />
-      <div id="tooltip"></div>
     </>
   );
 }
