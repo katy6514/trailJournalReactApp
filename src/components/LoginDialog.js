@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import FormLabel from "@mui/material/FormLabel";
-import FormControl from "@mui/material/FormControl";
-import Box from "@mui/material/Box";
+// import Button from "@mui/material/Button";
+// import TextField from "@mui/material/TextField";
+// import FormLabel from "@mui/material/FormLabel";
+// import FormControl from "@mui/material/FormControl";
+// import Box from "@mui/material/Box";
 import { auth } from "../firebase";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function FormDialog() {
-  const [emailError, setEmailError] = useState(false);
-  const [emailErrorMessage, setEmailErrorMessage] = useState("");
-  const [passwordError, setPasswordError] = useState(false);
-  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
+  //   const [emailError, setEmailError] = useState(false);
+  //   const [emailErrorMessage, setEmailErrorMessage] = useState("");
+  //   const [passwordError, setPasswordError] = useState(false);
+  //   const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -56,65 +56,39 @@ export default function FormDialog() {
   //   };
 
   return (
-    <>
-      <Box
-        component={"form"}
-        onSubmit={handleSubmit}
-        noValidate
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          width: "50%",
-          gap: 2,
-        }}
-      >
-        <FormControl>
-          <FormLabel htmlFor="email">Email</FormLabel>
-          <TextField
-            error={emailError}
-            helperText={emailErrorMessage}
-            id="email"
-            type="email"
+    <form onSubmit={handleSubmit} class="form">
+      <div class="fields">
+        <div class="field half">
+          <label for="email">Email</label>
+          <input
+            type="text"
             name="email"
-            placeholder="your@email.com"
-            autoComplete="email"
-            autoFocus
+            id="email"
             required
-            fullWidth
-            variant="outlined"
-            color={emailError ? "error" : "primary"}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </FormControl>
-        <FormControl>
-          <FormLabel htmlFor="password">Password</FormLabel>
-          <TextField
-            error={passwordError}
-            helperText={passwordErrorMessage}
-            name="password"
-            placeholder="••••••"
+        </div>
+        <div class="field half">
+          <label for="password">Password</label>
+          <input
             type="password"
+            name="password"
             id="password"
-            autoComplete="current-password"
-            autoFocus
             required
-            fullWidth
-            variant="outlined"
-            color={passwordError ? "error" : "primary"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </FormControl>
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          //   onClick={validateInputs}
-        >
-          Sign in
-        </Button>
-      </Box>
-    </>
+        </div>
+      </div>
+      <button
+        type="submit"
+        fullWidth
+        variant="contained"
+        //   onClick={validateInputs}
+      >
+        Sign in
+      </button>
+    </form>
   );
 }
