@@ -23,10 +23,10 @@ export default function MapSection({ user }) {
             <div class="content">
               <ul>
                 <li>Click once to zoom in on a state</li>
-                <li>double click to increase zoom</li>
-                <li>click and drag to pan</li>
-                <li>click outside state lines to reset zoom</li>
-                <li>hover over the photo points to see the photo</li>
+                <li>Double click to increase zoom</li>
+                <li>Click and drag to pan</li>
+                <li>Click outside state lines to reset zoom</li>
+                <li>Hover over the photo points to see the photo</li>
               </ul>
             </div>
           </section>
