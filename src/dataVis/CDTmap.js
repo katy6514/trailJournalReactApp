@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useMemo } from "react";
-
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 import * as d3 from "d3";
 
 import { width, height, cities } from "./constants.js";
@@ -14,8 +15,6 @@ import {
 
 const CDTmap = ({ user }) => {
   const ref = useRef();
-
-  console.log({ user });
 
   // ✅ Define projection + path WITHIN component and memoize
   const projection = useMemo(() => {
@@ -103,21 +102,21 @@ const CDTmap = ({ user }) => {
     /* -----------------------------------------------------
     *  Plotting route Data
     ----------------------------------------------------- */
-    d3.json("/CDT_border_to_lincoln.json").then((trailData) => {
-      // Plot the points
-      g.selectAll(".trail")
-        .data(trailData.features)
-        .enter()
-        .append("path")
-        .attr("class", "trail")
-        .attr("d", path)
-        .attr("stroke", (d) => getAlternatingColor(d.properties))
-        .attr("stroke-width", 1)
-        .attr("fill", "none")
-        .on("mouseover", handleMouseOver)
-        .on("mousemove", handleMouseMove)
-        .on("mouseout", handleMouseOut);
-    });
+    // d3.json("/CDT_border_to_lincoln.json").then((trailData) => {
+    //   // Plot the points
+    //   g.selectAll(".trail")
+    //     .data(trailData.features)
+    //     .enter()
+    //     .append("path")
+    //     .attr("class", "trail")
+    //     .attr("d", path)
+    //     .attr("stroke", (d) => getAlternatingColor(d.properties))
+    //     .attr("stroke-width", 1)
+    //     .attr("fill", "none")
+    //     .on("mouseover", handleMouseOver)
+    //     .on("mousemove", handleMouseMove)
+    //     .on("mouseout", handleMouseOut);
+    // });
 
     /* -----------------------------------------------------
     *  Plotting Garmin Data
@@ -301,6 +300,57 @@ const CDTmap = ({ user }) => {
       .attr("alignment-baseline", "middle")
       .style("font-family", "Open Sans");
   }, [path, projection, user]);
+
+  useEffect(() => {
+    if (!projection || !path) return;
+
+    const g = d3.select("#CDTmap").select("g.mapLayer");
+
+    const fetchTrails = async () => {
+      const querySnapshot = await getDocs(collection(db, "trails"));
+
+      const allTrails = [];
+      querySnapshot.forEach((doc) => {
+        const trailData = doc.data();
+        if (trailData.featuresJson) {
+          try {
+            const features = JSON.parse(trailData.featuresJson);
+            allTrails.push(...features);
+          } catch (err) {
+            console.error("Failed to parse trail JSON", err);
+          }
+        }
+      });
+
+      g.selectAll(".uploadedTrail")
+        .data(allTrails)
+        .enter()
+        .append("path")
+        .attr("class", "uploadedTrail")
+        .attr("d", path)
+        .attr("stroke", (d) => getAlternatingColor(d.properties))
+        .attr("stroke-width", 1)
+        .attr("fill", "none");
+    };
+
+    fetchTrails();
+  }, [db, projection, path]);
+
+  // d3.json("/CDT_border_to_lincoln.json").then((trailData) => {
+  //   // Plot the points
+  //   g.selectAll(".trail")
+  //     .data(trailData.features)
+  //     .enter()
+  //     .append("path")
+  //     .attr("class", "trail")
+  //     .attr("d", path)
+  //     .attr("stroke", (d) => getAlternatingColor(d.properties))
+  //     .attr("stroke-width", 1)
+  //     .attr("fill", "none")
+  //     .on("mouseover", handleMouseOver)
+  //     .on("mousemove", handleMouseMove)
+  //     .on("mouseout", handleMouseOut);
+  // });
 
   return <svg ref={ref}></svg>;
 };

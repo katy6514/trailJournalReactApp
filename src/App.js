@@ -18,6 +18,7 @@ function App() {
     <>
       <MapSection user={user} />
       <UploadSection user={user} />
+      {/* <TrailsSection user={user} /> */}
     </>
   );
 }

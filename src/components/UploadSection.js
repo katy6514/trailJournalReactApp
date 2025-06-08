@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import UploadDialog from "./UploadDialog.js";
 import { dataTypes } from "../dataVis/constants.js";
 
-export default function UploadSection() {
+export default function UploadSection({ user }) {
   return (
     <section class="wrapper style1 align-center">
       <div class="inner divided">
@@ -33,7 +33,7 @@ export default function UploadSection() {
             <p>
               Click below to upload json data from Caltopo or other sources.
             </p>
-            <UploadDialog uploadType={dataTypes.trail} />
+            <UploadDialog uploadType={dataTypes.trail} user={user} />
           </section>
           <section>
             <span class="icon solid style2 major fa-chart-bar"></span>

@@ -59,7 +59,7 @@ export default function FormDialog() {
     <form onSubmit={handleSubmit} class="form">
       <div class="fields">
         <div class="field half">
-          <label for="email">Email</label>
+          <label>Email</label>
           <input
             type="text"
             name="email"
@@ -70,7 +70,7 @@ export default function FormDialog() {
           />
         </div>
         <div class="field half">
-          <label for="password">Password</label>
+          <label>Password</label>
           <input
             type="password"
             name="password"
@@ -83,7 +83,6 @@ export default function FormDialog() {
       </div>
       <button
         type="submit"
-        fullWidth
         variant="contained"
         //   onClick={validateInputs}
       >
