@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { auth, onAuthStateChanged } from "./firebase";
 
 import MapSection from "./components/MapSection.js";
-import UploadSection from "./components/UploadSection.js";
+import DataGrid from "./components/DataGrid.js";
 import TrailsSection from "./components/TrailsSection.js";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <MapSection user={user} />
-      <UploadSection user={user} />
+      <DataGrid user={user} />
       <TrailsSection />
     </>
   );

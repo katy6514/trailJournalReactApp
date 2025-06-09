@@ -15,6 +15,7 @@ import {
 
 const CDTmap = ({ user }) => {
   const ref = useRef();
+  const gRef = useRef(null);
 
   // ✅ Define projection + path WITHIN component and memoize
   const projection = useMemo(() => {
@@ -38,6 +39,7 @@ const CDTmap = ({ user }) => {
     svg.selectAll("*").remove();
 
     const g = svg.append("g").attr("class", "mapLayer");
+    gRef.current = g; // ✅ store g in a ref for later access
 
     // Add zoom behavior
     const zoom = d3
@@ -290,42 +292,58 @@ const CDTmap = ({ user }) => {
     ----------------------------------------------------- */
 
   useEffect(() => {
-    if (!projection || !path) return;
-
-    const g = d3.select("#CDTmap").select("g.mapLayer");
+    if (!projection || !path || !gRef.current) {
+      console.warn("Projection or path not ready");
+      return;
+    }
+    // const g = d3.select("#CDTmap").select("g.mapLayer");
+    const g = gRef.current;
+    if (g.empty()) {
+      console.warn("g.mapLayer not found — map not ready yet");
+      return;
+    }
 
     const fetchTrails = async () => {
-      const querySnapshot = await getDocs(collection(db, "trails"));
+      const snapshot = await getDocs(collection(db, "trails"));
 
-      const allTrails = [];
-      querySnapshot.forEach((doc) => {
-        const trailData = doc.data();
-        if (trailData.featuresJson) {
-          try {
-            const features = JSON.parse(trailData.featuresJson);
-            allTrails.push(...features);
-          } catch (err) {
-            console.error("Failed to parse trail JSON", err);
-          }
+      const trailList = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      if (trailList.length === 0) return;
+
+      const { featuresJson } = trailList[trailList.length - 1]; // Get the last uploaded trail dataset
+      if (featuresJson) {
+        try {
+          // const features = JSON.parse(featuresJson);
+          const features = JSON.parse(featuresJson).filter(
+            (f) =>
+              f.geometry &&
+              f.geometry.type === "LineString" &&
+              Array.isArray(f.geometry.coordinates) &&
+              f.geometry.coordinates.length > 1
+          );
+          g.selectAll(".uploadedTrail").remove(); // Clear previous
+
+          g.selectAll(".uploadedTrail")
+            .data(features)
+            .enter()
+            .append("path")
+            .attr("class", "uploadedTrail")
+            .attr("d", path)
+            .attr("stroke", (d) => getAlternatingColor(d.properties))
+            .attr("stroke-width", 1)
+            .attr("fill", "none")
+            .on("mouseover", handleMouseOver)
+            .on("mousemove", handleMouseMove)
+            .on("mouseout", handleMouseOut);
+        } catch (err) {
+          console.error("Failed to parse trail JSON", err);
         }
-      });
-
-      g.selectAll(".uploadedTrail")
-        .data(allTrails)
-        .enter()
-        .append("path")
-        .attr("class", "uploadedTrail")
-        .attr("d", path)
-        .attr("stroke", (d) => getAlternatingColor(d.properties))
-        .attr("stroke-width", 1)
-        .attr("fill", "none")
-        .on("mouseover", handleMouseOver)
-        .on("mousemove", handleMouseMove)
-        .on("mouseout", handleMouseOut);
+      }
     };
-
     fetchTrails();
-  }, [db, projection, path]);
+  }, [db, projection, path, gRef.current]);
 
   return <svg ref={ref}></svg>;
 };
