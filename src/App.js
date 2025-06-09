@@ -4,6 +4,7 @@ import { auth, onAuthStateChanged } from "./firebase";
 import MapSection from "./components/MapSection.js";
 import DataGrid from "./components/DataGrid.js";
 import TrailsSection from "./components/TrailsSection.js";
+import PhotosSection from "./components/PhotosSection.js";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -20,6 +21,7 @@ function App() {
       <MapSection user={user} />
       <DataGrid user={user} />
       <TrailsSection user={user} />
+      <PhotosSection user={user} />
     </>
   );
 }
