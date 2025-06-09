@@ -1,6 +1,6 @@
 import CDTmap from "../dataVis/CDTmap";
 import LoginForm from "./LoginForm";
-import { auth, onAuthStateChanged } from "../firebase";
+import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 
 export default function MapSection({ user }) {

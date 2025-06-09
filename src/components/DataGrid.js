@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import UploadDialog from "./UploadDialog.js";
-import { dataTypes } from "../dataVis/constants.js";
+// import React, { useState } from "react";
+// import UploadDialog from "./UploadDialog.js";
+// import { dataTypes } from "../dataVis/constants.js";
 
 export default function DataGrid({ user }) {
   return (

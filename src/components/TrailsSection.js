@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import UploadDialog from "./UploadDialog.js";
 import { dataTypes } from "../dataVis/constants.js";
 import TrailsTable from "./TrailsTable.js";
 
 export default function TrailsSection({ user }) {
-  console.log({ user });
   return (
     <>
       <section
@@ -21,14 +20,6 @@ export default function TrailsSection({ user }) {
             then exported those tracks as GeoJSON and uploaded them here.
           </p>
           {user && <UploadDialog uploadType={dataTypes.trail} user={user} />}
-
-          {/* <ul class="actions stacked">
-            <li>
-              <a href="#" class="button">
-                Caltopo link?
-              </a>
-            </li>
-          </ul> */}
         </div>
         <div class="image">
           <img src="images/spotlight01.jpg" alt="" />
