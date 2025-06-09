@@ -26,11 +26,10 @@ const TrailTable = () => {
 
   return (
     <div>
-      <h2>Legs</h2>
       <table border="1" cellPadding="6">
         <thead>
           <tr>
-            <th>Title</th>
+            <th>Leg</th>
             <th>Date Hiked</th>
             <th>Miles</th>
           </tr>

@@ -19,7 +19,7 @@ function App() {
     <>
       <MapSection user={user} />
       <DataGrid user={user} />
-      <TrailsSection />
+      <TrailsSection user={user} />
     </>
   );
 }

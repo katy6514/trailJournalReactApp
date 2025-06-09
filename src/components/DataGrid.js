@@ -4,7 +4,7 @@ import { dataTypes } from "../dataVis/constants.js";
 
 export default function DataGrid({ user }) {
   return (
-    <section class="wrapper style1 align-center">
+    <section class="wrapper style1 align-center addBoxShadow">
       <div class="inner divided">
         <h2>The Data</h2>
         <p>
@@ -13,23 +13,32 @@ export default function DataGrid({ user }) {
         </p>
         <div class="items style1 medium onscroll-fade-in">
           <section>
-            <span class="icon style2 major fa-gem"></span>
-            <h3>Garmin data</h3>
+            {/* <span class="icon style2 major fa-gem"></span> */}
+            <h3>Garmin</h3>
             <p>
               I carried a Garmin Inreach Mini 2 on my trip, and used it to save
               the location of my campsites send messages.
             </p>
           </section>
           <section>
-            <span class="icon solid style2 major fa-save"></span>
+            {/* <span class="icon solid style2 major fa-save"></span> */}
             <h3>Trail Routes</h3>
             <p>
-              Click below to upload json data from Caltopo or other sources.
+              My daily miles hiked, routes generated after the hike with CalTopo
             </p>
-            <UploadDialog uploadType={dataTypes.trail} user={user} />
+            <ul class="actions stacked">
+              <li>
+                <a
+                  href="#trailSection"
+                  class="button big wide smooth-scroll-middle"
+                >
+                  Go to Trails Section
+                </a>
+              </li>
+            </ul>
           </section>
           <section>
-            <span class="icon solid style2 major fa-chart-bar"></span>
+            {/* <span class="icon solid style2 major fa-chart-bar"></span> */}
             <h3>Photos</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui
@@ -38,7 +47,7 @@ export default function DataGrid({ user }) {
             </p>
           </section>
           <section>
-            <span class="icon solid style2 major fa-wifi"></span>
+            {/* <span class="icon solid style2 major fa-wifi"></span> */}
             <h3>Journal Entries</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui
@@ -47,7 +56,7 @@ export default function DataGrid({ user }) {
             </p>
           </section>
           <section>
-            <span class="icon solid style2 major fa-cog"></span>
+            {/* <span class="icon solid style2 major fa-cog"></span> */}
             <h3>Videos</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui
@@ -56,7 +65,7 @@ export default function DataGrid({ user }) {
             </p>
           </section>
           <section>
-            <span class="icon style2 major fa-paper-plane"></span>
+            {/* <span class="icon style2 major fa-paper-plane"></span> */}
             <h3>Six</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui
