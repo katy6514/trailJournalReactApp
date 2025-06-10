@@ -11,7 +11,7 @@ export default function TrailsSection({ user }) {
         id="trailSection"
       >
         <div class="content">
-          <h2>Trail Sections</h2>
+          <h2>Daily Progress</h2>
           <p>
             I saved the location of my nightly campsites with my garmin. I did
             not record my walks each day with the garmin becuase I didn't want

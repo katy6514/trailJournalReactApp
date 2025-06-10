@@ -122,16 +122,22 @@ function Gallery() {
 
 export default function PhotosSection({ user }) {
   return (
-    <section className="wrapper style1 align-center addBoxShadow">
-      <div className="inner divided">
+    <section
+      className="wrapper style1 align-center addBoxShadow"
+      id="photoSection"
+    >
+      <div className="inner">
         <h2>Photos</h2>
         <p>
-          Below are some of the photos I took during my trip. You can follow the
-          buttons to learn more.
+          Below are some of the photos I took during my trip. Still working on
+          this section! XD
         </p>
         {user && <UploadDialog uploadType={dataTypes.photo} user={user} />}
       </div>
-      <Gallery />
+
+      <div className="inner divided">
+        <Gallery />
+      </div>
     </section>
   );
 }

@@ -2112,9 +2112,9 @@ input, select, textarea {
 		white-space: nowrap;
 		font-size: 0.85rem;
 		max-width: 20rem;
-		height: 3.75em;
+		/* height: 3.75em; */
 		line-height: 3.75em;
-		border-radius: 3.75em;
+		/* border-radius: 3.75em; */
 		padding: 0 2.5em;
 		text-overflow: ellipsis;
 		overflow: hidden;
@@ -2188,7 +2188,7 @@ input, select, textarea {
 	.button {
 		background-color: transparent;
 		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
-		color: #000000 !important;
+		/* color: #000000 !important; */
 	}
 
 		input[type="submit"]:hover,

@@ -1,15 +1,15 @@
 import CDTmap from "../dataVis/CDTmap";
-import LoginForm from "./LoginForm";
-import { auth } from "../firebase";
-import { signOut } from "firebase/auth";
+// import LoginForm from "./LoginForm";
+// import { auth } from "../firebase";
+// import { signOut } from "firebase/auth";
 
 export default function MapSection({ user }) {
-  const WelcomeMessage = ({ user }) => (
-    <>
-      <p>Welcome, {user.email}</p>
-      <button onClick={() => signOut(auth)}>Sign Out</button>
-    </>
-  );
+  // const WelcomeMessage = ({ user }) => (
+  //   <>
+  //     <p>Welcome, {user.email}</p>
+  //     <button onClick={() => signOut(auth)}>Sign Out</button>
+  //   </>
+  // );
   return (
     <section class="wrapper style1 align-center">
       <div class="inner">
@@ -32,18 +32,18 @@ export default function MapSection({ user }) {
           </section>
         </div>
         <CDTmap user={user} />
-        <div class="index align-left">
+        {/* <div class="index align-left">
           <section>
             <header>
               <h3>Sign In</h3>
             </header>
             <div class="content">
-              {/* <h4>Given credentials to login?</h4>
-              <p>Sign in below to see more</p> */}
+              <h4>Given credentials to login?</h4>
+              <p>Sign in below to see more</p>
               {user ? <WelcomeMessage user={user} /> : <LoginForm />}
             </div>
           </section>
-        </div>
+        </div> */}
       </div>
       <div id="tooltip"></div>
     </section>
