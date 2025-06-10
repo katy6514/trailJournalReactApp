@@ -22,7 +22,7 @@ export default function TrailsSection({ user }) {
           {user && <UploadDialog uploadType={dataTypes.trail} user={user} />}
         </div>
         <div class="image">
-          <img src="images/spotlight01.jpg" alt="" />
+          <img src="images/titcombBasin.jpg" alt="" />
         </div>
       </section>
       <section class="wrapper style1 align-center">
