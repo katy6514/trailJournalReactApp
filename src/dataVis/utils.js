@@ -24,9 +24,9 @@ export function checkForCampsite(data) {
   }
 
   if (data.properties.MessageText.toLowerCase().includes("camped")) {
-    return "blue";
+    return true;
   }
-  return "red"; // No campsite found
+  return false; // No campsite found
 }
 
 export function haversineDistance([lon1, lat1], [lon2, lat2]) {
