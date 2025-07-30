@@ -107,6 +107,7 @@ const CDTmap = ({ user }) => {
     /* -----------------------------------------------------
     *  Plotting Garmin Data
     ----------------------------------------------------- */
+
     d3.json("cdtInreachData_withCoords.geojson").then((inReachdata) => {
       const points = inReachdata.features.filter(
         (d) =>
@@ -118,16 +119,47 @@ const CDTmap = ({ user }) => {
         projection(d.geometry.coordinates)
       );
 
-      // Plot the points
+      const campSites = [];
+      const messageSites = [];
+
+      validPoints.forEach((d) => {
+        if (checkForCampsite(d) === true) {
+          console.log("Campsite found");
+          campSites.push(d);
+        } else {
+          console.log("Message found");
+          messageSites.push(d);
+        }
+      });
+
+      // Plot the message sites using circles
       g.selectAll(".points")
-        .data(validPoints)
+        .data(messageSites)
         .enter()
         .append("circle")
         .attr("class", "points")
         .attr("cx", (d) => projection(d.geometry.coordinates)[0])
         .attr("cy", (d) => projection(d.geometry.coordinates)[1])
         .attr("r", 4)
-        .attr("fill", (d) => checkForCampsite(d))
+        .attr("fill", "red")
+        .attr("stroke", "none")
+        .on("mouseover", handleMouseOver)
+        .on("mousemove", handleMouseMove)
+        .on("mouseout", handleMouseOut);
+
+      // Plot the campsites using a triangle symbol
+      const triangle = d3.symbol().type(d3.symbolTriangle).size(64); // adjust size as needed
+      g.selectAll(".campPoints")
+        .data(campSites)
+        .enter()
+        .append("path")
+        .attr("class", "campPoints")
+        .attr("d", triangle)
+        .attr("transform", (d) => {
+          const [x, y] = projection(d.geometry.coordinates);
+          return `translate(${x}, ${y})`;
+        })
+        .attr("fill", "blue")
         .attr("stroke", "none")
         .on("mouseover", handleMouseOver)
         .on("mousemove", handleMouseMove)
