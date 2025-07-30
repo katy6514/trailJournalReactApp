@@ -47,15 +47,22 @@ const CDTmap = ({ user }) => {
       .scaleExtent([1, 500])
       .on("zoom", (event) => {
         g.attr("transform", event.transform);
-        g.selectAll("circle").attr("r", 4 / event.transform.k);
+        g.selectAll("circle").attr("r", 6 / event.transform.k);
         g.selectAll("text").attr("font-size", 12 / event.transform.k);
         g.selectAll("line").attr("stroke-width", 1 / event.transform.k);
 
-        const newSize = 64 / ((event.transform.k * event.transform.k) / 2);
+        const newSize = 128 / (event.transform.k * event.transform.k);
 
-        const triangle = d3.symbol().type(d3.symbolTriangle).size(newSize);
+        const zoomableSquare = d3.symbol().type(d3.symbolSquare).size(newSize);
+        const zoomableTriangle = d3
+          .symbol()
+          .type(d3.symbolTriangle)
+          .size(newSize);
+        const zoomableCross = d3.symbol().type(d3.symbolCross).size(newSize); // adjust size as needed
 
-        g.selectAll(".campPoints").attr("d", triangle);
+        g.selectAll(".campPoints").attr("d", zoomableTriangle);
+        g.selectAll(".messagePoints").attr("d", zoomableSquare);
+        g.selectAll(".cityPoints").attr("d", zoomableCross);
         g.selectAll(".uploadedTrail").attr(
           "stroke-width",
           2 / event.transform.k
@@ -114,6 +121,9 @@ const CDTmap = ({ user }) => {
     *  Plotting Garmin Data
     ----------------------------------------------------- */
 
+    const square = d3.symbol().type(d3.symbolSquare).size(128);
+    const triangle = d3.symbol().type(d3.symbolTriangle).size(128); // adjust size as needed
+
     d3.json("cdtInreachData_withCoords.geojson").then((inReachdata) => {
       const points = inReachdata.features.filter(
         (d) =>
@@ -130,23 +140,24 @@ const CDTmap = ({ user }) => {
 
       validPoints.forEach((d) => {
         if (checkForCampsite(d) === true) {
-          console.log("Campsite found");
           campSites.push(d);
         } else {
-          console.log("Message found");
           messageSites.push(d);
         }
       });
 
-      // Plot the message sites using circles
-      g.selectAll(".points")
+      // Plot the message sites using squares
+
+      g.selectAll(".messagePoints")
         .data(messageSites)
         .enter()
-        .append("circle")
-        .attr("class", "points")
-        .attr("cx", (d) => projection(d.geometry.coordinates)[0])
-        .attr("cy", (d) => projection(d.geometry.coordinates)[1])
-        .attr("r", 4)
+        .append("path")
+        .attr("class", "messagePoints")
+        .attr("d", square)
+        .attr("transform", (d) => {
+          const [x, y] = projection(d.geometry.coordinates);
+          return `translate(${x}, ${y})`;
+        })
         .attr("fill", "red")
         .attr("stroke", "none")
         .on("mouseover", handleMouseOver)
@@ -154,7 +165,6 @@ const CDTmap = ({ user }) => {
         .on("mouseout", handleMouseOut);
 
       // Plot the campsites using a triangle symbol
-      const triangle = d3.symbol().type(d3.symbolTriangle).size(64); // adjust size as needed
       g.selectAll(".campPoints")
         .data(campSites)
         .enter()
@@ -187,7 +197,7 @@ const CDTmap = ({ user }) => {
           .attr("class", "photoPoints")
           .attr("cx", (d) => projection([d.longitude, d.latitude])[0])
           .attr("cy", (d) => projection([d.longitude, d.latitude])[1])
-          .attr("r", 4)
+          .attr("r", 6)
           .attr("fill", "green")
           .attr("stroke", "none")
           .on("mouseover", handleMouseOver)
@@ -202,16 +212,21 @@ const CDTmap = ({ user }) => {
 
     const cityGroup = g.append("g").attr("class", "cities");
 
+    const cross = d3.symbol().type(d3.symbolCross).size(128); // adjust size as needed
+
     cityGroup
-      .selectAll("circle")
+      .selectAll(".cityPoints")
       .data(cities)
       .enter()
-      .append("circle")
-      .attr("r", 4)
+      .append("path")
+      .attr("class", "cityPoints")
+      .attr("d", cross)
+      .attr("transform", (d) => {
+        const [x, y] = projection([d.lon, d.lat]);
+        return `translate(${x}, ${y})`;
+      })
       .attr("fill", "black")
-      .attr("stroke", "none")
-      .attr("cx", (d) => projection([d.lon, d.lat])[0])
-      .attr("cy", (d) => projection([d.lon, d.lat])[1]);
+      .attr("stroke", "none");
 
     cityGroup
       .selectAll("line")
@@ -242,16 +257,15 @@ const CDTmap = ({ user }) => {
     /* -----------------------------------------------------
  *  Legend
  ----------------------------------------------------- */
-    g.append("circle")
-      .attr("cx", 100)
-      .attr("cy", 430)
-      .attr("r", 6)
+
+    g.append("path")
+      .attr("d", square)
+      .attr("transform", "translate(100,430)")
       .style("fill", "red")
       .style("stroke", "none");
-    g.append("circle")
-      .attr("cx", 100)
-      .attr("cy", 460)
-      .attr("r", 6)
+    g.append("path")
+      .attr("d", triangle)
+      .attr("transform", "translate(100,460)")
       .style("fill", "blue")
       .style("stroke", "none");
     g.append("circle")
@@ -260,12 +274,13 @@ const CDTmap = ({ user }) => {
       .attr("r", 6)
       .style("fill", "green")
       .style("stroke", "none");
-    g.append("circle")
-      .attr("cx", 100)
-      .attr("cy", 520)
-      .attr("r", 6)
+
+    g.append("path")
+      .attr("d", cross)
+      .attr("transform", "translate(100,520)")
       .style("fill", "black")
       .style("stroke", "none");
+
     g.append("line")
       .attr("x1", 90)
       .attr("x2", 110)
