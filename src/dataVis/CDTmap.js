@@ -139,11 +139,11 @@ const CDTmap = ({ user }) => {
     ----------------------------------------------------- */
     if (user) {
       d3.json("photoData.json").then((photoData) => {
-        const validPoints = photoData.filter((d) =>
+        const validPhotoPoints = photoData.filter((d) =>
           projection([d.longitude, d.latitude])
         );
         g.selectAll(".photoPoints")
-          .data(validPoints)
+          .data(validPhotoPoints)
           .enter()
           .append("circle")
           .attr("class", "photoPoints")
