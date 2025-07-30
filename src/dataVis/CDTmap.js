@@ -50,6 +50,12 @@ const CDTmap = ({ user }) => {
         g.selectAll("circle").attr("r", 4 / event.transform.k);
         g.selectAll("text").attr("font-size", 12 / event.transform.k);
         g.selectAll("line").attr("stroke-width", 1 / event.transform.k);
+
+        const newSize = 64 / ((event.transform.k * event.transform.k) / 2);
+
+        const triangle = d3.symbol().type(d3.symbolTriangle).size(newSize);
+
+        g.selectAll(".campPoints").attr("d", triangle);
         g.selectAll(".uploadedTrail").attr(
           "stroke-width",
           2 / event.transform.k
