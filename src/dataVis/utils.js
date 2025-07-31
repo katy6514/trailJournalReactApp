@@ -1,18 +1,18 @@
-import { dateTimeFormatter } from "./constants.js";
+import { dateTimeFormatter, colors } from "./constants.js";
 
 /**
  * Taakes the properties object of a route and returns a color based on the leg number.
  * @param {*} properties
- * @returns blue or orange
+ * @returns alternating colors
  */
 export function getAlternatingColor(properties) {
   const { title } = properties;
   if (typeof title === "string") {
     const legNum = Number(title.split(" ")[0]);
     if (legNum % 2 === 0) {
-      return "blue";
+      return colors.evenDays;
     } else {
-      return "orange";
+      return colors.oddDays;
     }
   }
 }

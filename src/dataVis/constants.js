@@ -14,6 +14,15 @@ export const dataTypes = {
   campsite: "Campsite",
 };
 
+export const colors = {
+  oddDays: "#6CCFF6",
+  campSites: "#337357",
+  messages: "#F9A620",
+  evenDays: "#2E2D4D",
+  photos: "#E26D5A",
+  black: "#000000",
+};
+
 export const cities = [
   {
     name: "CDT Northern Terminus",

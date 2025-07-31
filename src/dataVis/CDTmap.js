@@ -3,7 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import * as d3 from "d3";
 
-import { width, height, cities } from "./constants.js";
+import { width, height, cities, colors } from "./constants.js";
 
 import {
   getAlternatingColor,
@@ -158,7 +158,7 @@ const CDTmap = ({ user }) => {
           const [x, y] = projection(d.geometry.coordinates);
           return `translate(${x}, ${y})`;
         })
-        .attr("fill", "red")
+        .attr("fill", colors.messages)
         .attr("stroke", "none")
         .on("mouseover", handleMouseOver)
         .on("mousemove", handleMouseMove)
@@ -175,7 +175,7 @@ const CDTmap = ({ user }) => {
           const [x, y] = projection(d.geometry.coordinates);
           return `translate(${x}, ${y})`;
         })
-        .attr("fill", "blue")
+        .attr("fill", colors.campSites)
         .attr("stroke", "none")
         .on("mouseover", handleMouseOver)
         .on("mousemove", handleMouseMove)
@@ -198,7 +198,7 @@ const CDTmap = ({ user }) => {
           .attr("cx", (d) => projection([d.longitude, d.latitude])[0])
           .attr("cy", (d) => projection([d.longitude, d.latitude])[1])
           .attr("r", 6)
-          .attr("fill", "green")
+          .attr("fill", colors.photos)
           .attr("stroke", "none")
           .on("mouseover", handleMouseOver)
           .on("mousemove", handleMouseMove)
@@ -261,18 +261,18 @@ const CDTmap = ({ user }) => {
     g.append("path")
       .attr("d", square)
       .attr("transform", "translate(100,430)")
-      .style("fill", "red")
+      .style("fill", colors.messages)
       .style("stroke", "none");
     g.append("path")
       .attr("d", triangle)
       .attr("transform", "translate(100,460)")
-      .style("fill", "blue")
+      .style("fill", colors.campSites)
       .style("stroke", "none");
     g.append("circle")
       .attr("cx", 100)
       .attr("cy", 490)
       .attr("r", 6)
-      .style("fill", "green")
+      .style("fill", colors.photos)
       .style("stroke", "none");
 
     g.append("path")
@@ -286,14 +286,14 @@ const CDTmap = ({ user }) => {
       .attr("x2", 110)
       .attr("y1", 550)
       .attr("y2", 550)
-      .attr("stroke", "blue") // Set the line color
+      .attr("stroke", colors.evenDays) // Set the line color
       .attr("stroke-width", 3); // Set the line width
     g.append("line")
       .attr("x1", 90)
       .attr("x2", 110)
       .attr("y1", 580)
       .attr("y2", 580)
-      .attr("stroke", "orange") // Set the line color
+      .attr("stroke", colors.oddDays) // Set the line color
       .attr("stroke-width", 3); // Set the line width
 
     g.append("text")
@@ -385,7 +385,7 @@ const CDTmap = ({ user }) => {
             .attr("class", "uploadedTrail")
             .attr("d", path)
             .attr("stroke", (d) => getAlternatingColor(d.properties))
-            .attr("stroke-width", 1)
+            .attr("stroke-width", 2)
             .attr("fill", "none")
             .on("mouseover", handleMouseOver)
             .on("mousemove", handleMouseMove)
