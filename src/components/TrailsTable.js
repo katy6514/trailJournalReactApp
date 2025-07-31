@@ -25,8 +25,12 @@ const TrailTable = () => {
   );
 
   return (
-    <div>
-      <table border="1" cellPadding="6">
+    <div style={{ maxHeight: "600px", overflowY: "auto" }}>
+      <table
+        border="1"
+        cellPadding="6"
+        style={{ width: "100%", borderCollapse: "collapse" }}
+      >
         <thead>
           <tr>
             <th>Leg</th>
