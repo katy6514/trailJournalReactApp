@@ -77,6 +77,22 @@ export function handleMouseOver(event, d) {
   }
 }
 
+export function photoMouseOver(event, d) {
+  // console.log(user)/;
+  if (!d) {
+    return;
+  }
+  const tooltip = document.getElementById("tooltip");
+
+  if (d.geometry && d.geometry.type) {
+    const { path, dateTime } = d.properties;
+    console.log({ path });
+    // const dateString = dateTimeFormatter.format(dateTime);
+    tooltip.innerHTML = `<img src="${path}" width="550"><br /><p>Message Date: ${dateTime}</p>`;
+    tooltip.style.display = "block";
+  }
+}
+
 export function handleMouseMove(event) {
   const tooltip = document.getElementById("tooltip");
   tooltip.style.left = event.pageX + 15 + "px";

@@ -8,6 +8,7 @@ import { width, height, cities, colors } from "./constants.js";
 import {
   getAlternatingColor,
   checkForCampsite,
+  photoMouseOver,
   handleMouseOver,
   handleMouseMove,
   handleMouseOut,
@@ -186,21 +187,28 @@ const CDTmap = ({ user }) => {
     *  Take the cleaned photo geojson data and plot it
     ----------------------------------------------------- */
     if (user) {
-      d3.json("photoData.json").then((photoData) => {
-        const validPhotoPoints = photoData.filter((d) =>
-          projection([d.longitude, d.latitude])
+      d3.json("geoPhotos.geojson").then((photoData) => {
+        const points = photoData.features.filter(
+          (d) =>
+            d.geometry?.type === "Point" &&
+            Array.isArray(d.geometry.coordinates) &&
+            d.geometry.coordinates.length === 2
         );
+        const validPhotoPoints = points.filter((d) =>
+          projection(d.geometry.coordinates)
+        );
+
         g.selectAll(".photoPoints")
           .data(validPhotoPoints)
           .enter()
           .append("circle")
           .attr("class", "photoPoints")
-          .attr("cx", (d) => projection([d.longitude, d.latitude])[0])
-          .attr("cy", (d) => projection([d.longitude, d.latitude])[1])
+          .attr("cx", (d) => projection(d.geometry.coordinates)[0])
+          .attr("cy", (d) => projection(d.geometry.coordinates)[1])
           .attr("r", 6)
           .attr("fill", colors.photos)
           .attr("stroke", "none")
-          .on("mouseover", handleMouseOver)
+          .on("mouseover", photoMouseOver)
           .on("mousemove", handleMouseMove)
           .on("mouseout", handleMouseOut);
       });
