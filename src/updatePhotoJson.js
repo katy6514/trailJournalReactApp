@@ -30,18 +30,22 @@ async function loadPhotoMetadata(paths) {
       const lon = -tags.GPSLongitude?.description;
       const dateTime = tags.DateTimeOriginal?.description;
       const offsetTime = tags.OffsetTimeOriginal?.description;
+      const height = tags["Image Height"]?.description;
+      const width = tags["Image Width"]?.description;
 
       if (lat && lon) {
         features.push({
           type: "Feature",
           geometry: {
-            type: "Point",
+            type: "Photo",
             coordinates: [lon, lat], // GeoJSON expects [lon, lat]
           },
           properties: {
             path: photoPath.slice(7), //trim off the public/ prefix
             dateTime,
             offsetTime,
+            height,
+            width,
           },
         });
       } else {

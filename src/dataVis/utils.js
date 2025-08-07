@@ -70,26 +70,12 @@ export function handleMouseOver(event, d) {
       const legName = d.properties.description;
       tooltip.innerHTML = ` <p>Leg #${legNum}: ${legName}<p>`;
       tooltip.style.display = "block";
+    } else if (type === "Photo") {
+      // Photopoint, display it's leg name
+      const { path, dateTime } = d.properties;
+      tooltip.innerHTML = `<img src="${path}" width="550"><br /><p>Message Date: ${dateTime}</p>`;
+      tooltip.style.display = "block";
     }
-  } else {
-    tooltip.innerHTML = `<img src="${d.path}" width="550">`;
-    tooltip.style.display = "block";
-  }
-}
-
-export function photoMouseOver(event, d) {
-  // console.log(user)/;
-  if (!d) {
-    return;
-  }
-  const tooltip = document.getElementById("tooltip");
-
-  if (d.geometry && d.geometry.type) {
-    const { path, dateTime } = d.properties;
-    console.log({ path });
-    // const dateString = dateTimeFormatter.format(dateTime);
-    tooltip.innerHTML = `<img src="${path}" width="550"><br /><p>Message Date: ${dateTime}</p>`;
-    tooltip.style.display = "block";
   }
 }
 

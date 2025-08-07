@@ -8,7 +8,6 @@ import { width, height, cities, colors } from "./constants.js";
 import {
   getAlternatingColor,
   checkForCampsite,
-  photoMouseOver,
   handleMouseOver,
   handleMouseMove,
   handleMouseOut,
@@ -190,7 +189,7 @@ const CDTmap = ({ user }) => {
       d3.json("geoPhotos.geojson").then((photoData) => {
         const points = photoData.features.filter(
           (d) =>
-            d.geometry?.type === "Point" &&
+            d.geometry?.type === "Photo" &&
             Array.isArray(d.geometry.coordinates) &&
             d.geometry.coordinates.length === 2
         );
@@ -208,7 +207,7 @@ const CDTmap = ({ user }) => {
           .attr("r", 6)
           .attr("fill", colors.photos)
           .attr("stroke", "none")
-          .on("mouseover", photoMouseOver)
+          .on("mouseover", handleMouseOver)
           .on("mousemove", handleMouseMove)
           .on("mouseout", handleMouseOut);
       });
