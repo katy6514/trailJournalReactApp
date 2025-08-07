@@ -15,88 +15,14 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-const photos = [
-  {
-    src: "/CDTvisPhotos/014934BC-66C4-4CAD-B91C-6FF34AF38601.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/01E85E57-A5E7-4F37-8A60-4F763585F30E.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/05D95CF0-1A88-4D89-9A20-4ED37BB70421.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/10C98EB4-9252-4C67-BE7B-735525D80F30.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/014934BC-66C4-4CAD-B91C-6FF34AF38601.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/01E85E57-A5E7-4F37-8A60-4F763585F30E.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/05D95CF0-1A88-4D89-9A20-4ED37BB70421.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/10C98EB4-9252-4C67-BE7B-735525D80F30.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/014934BC-66C4-4CAD-B91C-6FF34AF38601.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/01E85E57-A5E7-4F37-8A60-4F763585F30E.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/05D95CF0-1A88-4D89-9A20-4ED37BB70421.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/10C98EB4-9252-4C67-BE7B-735525D80F30.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/014934BC-66C4-4CAD-B91C-6FF34AF38601.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/01E85E57-A5E7-4F37-8A60-4F763585F30E.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/05D95CF0-1A88-4D89-9A20-4ED37BB70421.jpg",
-    width: 800,
-    height: 600,
-  },
-  {
-    src: "/CDTvisPhotos/10C98EB4-9252-4C67-BE7B-735525D80F30.jpg",
-    width: 800,
-    height: 600,
-  },
-];
+import { photos } from "../photosArray"; // adjust path as needed
+
+photos.sort((a, b) => {
+  console.log("Comparing dates:", a.dateTime, b.dateTime);
+  const dateA = new Date(a.dateTime.replace(/:/, "-").replace(/:/, "-"));
+  const dateB = new Date(b.dateTime.replace(/:/, "-").replace(/:/, "-"));
+  return dateA - dateB; // ascending (earliest first)
+});
 
 function Gallery() {
   const [index, setIndex] = useState(-1);

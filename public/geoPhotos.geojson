@@ -10840,21 +10840,6 @@
         ]
       },
       "properties": {
-        "path": "CDTvisPhotos/IMG_6012.heic",
-        "dateTime": "2024:08:22 19:53:53",
-        "offsetTime": "-06:00"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Photo",
-        "coordinates": [
-          -109.19236111111111,
-          42.729080555555555
-        ]
-      },
-      "properties": {
         "path": "CDTvisPhotos/IMG_6012.jpeg",
         "dateTime": "2024:08:22 19:53:53",
         "offsetTime": "-06:00",
@@ -11183,21 +11168,6 @@
         "offsetTime": "-06:00",
         "height": "1071px",
         "width": "1428px"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Photo",
-        "coordinates": [
-          -109.16516111111112,
-          42.70321666666667
-        ]
-      },
-      "properties": {
-        "path": "CDTvisPhotos/IMG_6129.heic",
-        "dateTime": "2024:08:23 08:44:21",
-        "offsetTime": "-06:00"
       }
     },
     {

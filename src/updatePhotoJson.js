@@ -14,6 +14,7 @@ const ExifReader = require("exifreader");
 async function loadPhotoMetadata(paths) {
   console.log("Loading photo metadata...");
   const features = [];
+  const galleryPhotos = [];
 
   for (const photoPath of paths) {
     try {
@@ -33,6 +34,17 @@ async function loadPhotoMetadata(paths) {
       const height = tags["Image Height"]?.description;
       const width = tags["Image Width"]?.description;
 
+      const publicPath = photoPath.slice(7); // e.g., CDTvisPhotos/filename.jpg
+
+      if (dateTime) {
+        galleryPhotos.push({
+          src: "/" + publicPath,
+          width: parseInt(width, 10) || 800, // default to 800 if not available
+          height: parseInt(height, 10) || 600, // default to 600 if not available
+          dateTime,
+        });
+      }
+
       if (lat && lon) {
         features.push({
           type: "Feature",
@@ -41,7 +53,7 @@ async function loadPhotoMetadata(paths) {
             coordinates: [lon, lat], // GeoJSON expects [lon, lat]
           },
           properties: {
-            path: photoPath.slice(7), //trim off the public/ prefix
+            path: publicPath,
             dateTime,
             offsetTime,
             height,
@@ -56,16 +68,31 @@ async function loadPhotoMetadata(paths) {
     }
   }
 
-  // Wrap in FeatureCollection
-  const geojson = {
-    type: "FeatureCollection",
-    features,
-  };
-
   // ✅ Write GeoJSON into public/
-  const outputFile = path.join(__dirname, "../public/geoPhotos.geojson");
-  fs.writeFileSync(outputFile, JSON.stringify(geojson, null, 2));
-  console.log(`✅ Wrote ${features.length} features to ${outputFile}`);
+  const geoJsonOutputFile = path.join(__dirname, "../public/geoPhotos.geojson");
+
+  fs.writeFileSync(
+    geoJsonOutputFile,
+    JSON.stringify(
+      {
+        type: "FeatureCollection",
+        features,
+      },
+      null,
+      2
+    )
+  );
+  console.log(`✅ Wrote ${features.length} features to ${geoJsonOutputFile}`);
+
+  // ✅ Write photos array to public/
+  const photosOutputFile = path.join(__dirname, "../src/photosArray.js");
+  const photosJs = `export const photos = ${JSON.stringify(
+    galleryPhotos,
+    null,
+    2
+  )};`;
+  fs.writeFileSync(photosOutputFile, photosJs);
+  console.log(`✅ Wrote ${galleryPhotos.length} photos to ${photosOutputFile}`);
 }
 
 // ---- MAIN ----
