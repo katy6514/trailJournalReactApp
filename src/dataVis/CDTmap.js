@@ -308,43 +308,37 @@ const CDTmap = ({ user }) => {
       .attr("y", 430)
       .text("Garmin Message Sent")
       .style("font-size", "15px")
-      .attr("alignment-baseline", "middle")
-      .style("font-family", "Open Sans");
+      .attr("alignment-baseline", "middle");
     g.append("text")
       .attr("x", 120)
       .attr("y", 460)
       .text("Campsite Location")
       .style("font-size", "15px")
-      .attr("alignment-baseline", "middle")
-      .style("font-family", "Open Sans");
+      .attr("alignment-baseline", "middle");
     g.append("text")
       .attr("x", 120)
       .attr("y", 490)
       .text("Photo Location")
       .style("font-size", "15px")
-      .attr("alignment-baseline", "middle")
-      .style("font-family", "Open Sans");
+      .attr("alignment-baseline", "middle");
     g.append("text")
       .attr("x", 120)
       .attr("y", 520)
       .text("Resupply Stops")
       .style("font-size", "15px")
-      .attr("alignment-baseline", "middle")
-      .style("font-family", "Open Sans");
+      .attr("alignment-baseline", "middle");
     g.append("text")
       .attr("x", 120)
       .attr("y", 550)
       .text("Even days")
       .style("font-size", "15px")
-      .attr("alignment-baseline", "middle")
-      .style("font-family", "Open Sans");
+      .attr("alignment-baseline", "middle");
     g.append("text")
       .attr("x", 120)
       .attr("y", 580)
       .text("Odd days")
       .style("font-size", "15px")
-      .attr("alignment-baseline", "middle")
-      .style("font-family", "Open Sans");
+      .attr("alignment-baseline", "middle");
   }, [path, projection, user]);
 
   /* -----------------------------------------------------

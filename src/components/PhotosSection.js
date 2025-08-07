@@ -20,7 +20,6 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { photos } from "../photosArray"; // adjust path as needed
 
 photos.sort((a, b) => {
-  console.log("Comparing dates:", a.dateTime, b.dateTime);
   const dateA = new Date(a.dateTime.replace(/:/, "-").replace(/:/, "-"));
   const dateB = new Date(b.dateTime.replace(/:/, "-").replace(/:/, "-"));
   return dateA - dateB; // ascending (earliest first)
