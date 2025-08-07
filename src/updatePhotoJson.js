@@ -10,6 +10,7 @@
 const fs = require("fs");
 const path = require("path");
 const ExifReader = require("exifreader");
+const { title } = require("process");
 
 async function loadPhotoMetadata(paths) {
   console.log("Loading photo metadata...");
@@ -35,6 +36,7 @@ async function loadPhotoMetadata(paths) {
       const width = tags["Image Width"]?.description;
 
       const publicPath = photoPath.slice(7); // e.g., CDTvisPhotos/filename.jpg
+      const fileName = path.basename(photoPath);
 
       if (dateTime) {
         galleryPhotos.push({
@@ -42,6 +44,8 @@ async function loadPhotoMetadata(paths) {
           width: parseInt(width, 10) || 800, // default to 800 if not available
           height: parseInt(height, 10) || 600, // default to 600 if not available
           dateTime,
+          title: fileName,
+          description: `Photo taken on ${dateTime} at ${lat}, ${lon}`,
         });
       }
 

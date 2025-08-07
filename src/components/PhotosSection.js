@@ -6,7 +6,9 @@ import { RowsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/rows.css";
 
 import Lightbox from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/captions.css";
 
 // import optional lightbox plugins
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
@@ -40,7 +42,7 @@ function Gallery() {
         index={index}
         close={() => setIndex(-1)}
         // enable optional lightbox plugins
-        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom, Captions]}
       />
     </>
   );
