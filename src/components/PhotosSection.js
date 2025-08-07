@@ -33,7 +33,7 @@ function Gallery() {
     <>
       <RowsPhotoAlbum
         photos={photos}
-        // targetRowHeight={150}
+        targetRowHeight={150}
         onClick={({ index }) => setIndex(index)}
       />
       <Lightbox
@@ -63,7 +63,10 @@ export default function PhotosSection({ user }) {
         {user && <UploadDialog uploadType={dataTypes.photo} user={user} />}
       </div>
 
-      <div className="inner divided">
+      <div
+        className="inner divided"
+        style={{ maxHeight: "700px", overflowY: "auto" }}
+      >
         <Gallery />
       </div>
     </section>

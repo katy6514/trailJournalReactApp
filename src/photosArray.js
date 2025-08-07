@@ -632,28 +632,12 @@ export const photos = [
     "description": "Photo taken on 2024:06:21 12:30:18 at 48.73505, -113.69065833333333"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3010.jpeg",
-    "width": 3971,
-    "height": 922,
-    "dateTime": "2024:06:21 12:46:14",
-    "title": "IMG_3010.jpeg",
-    "description": "Photo taken on 2024:06:21 12:46:14 at 48.73132777777778, -113.68989444444445"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3016.jpeg",
     "width": 1428,
     "height": 1071,
     "dateTime": "2024:06:21 15:53:17",
     "title": "IMG_3016.jpeg",
     "description": "Photo taken on 2024:06:21 15:53:17 at 48.72093888888889, -113.68697222222222"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3018.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:06:21 16:49:56",
-    "title": "IMG_3018.jpeg",
-    "description": "Photo taken on 2024:06:21 16:49:56 at undefined, NaN"
   },
   {
     "src": "/CDTvisPhotos/IMG_3019.jpg",
@@ -704,14 +688,6 @@ export const photos = [
     "description": "Photo taken on 2024:06:22 16:45:10 at 48.67563611111111, -113.49182222222223"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3052.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:06:22 17:08:28",
-    "title": "IMG_3052.jpeg",
-    "description": "Photo taken on 2024:06:22 17:08:28 at 48.68136111111111, -113.48569444444445"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3063.jpeg",
     "width": 1428,
     "height": 1071,
@@ -726,14 +702,6 @@ export const photos = [
     "dateTime": "2024:06:23 12:21:11",
     "title": "IMG_3068.jpeg",
     "description": "Photo taken on 2024:06:23 12:21:11 at 48.574222222222225, -113.51309166666667"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3071.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:06:23 13:17:51",
-    "title": "IMG_3071.jpeg",
-    "description": "Photo taken on 2024:06:23 13:17:51 at 48.573819444444446, -113.51036944444445"
   },
   {
     "src": "/CDTvisPhotos/IMG_3074.jpeg",
@@ -758,14 +726,6 @@ export const photos = [
     "dateTime": "2024:06:23 13:42:31",
     "title": "IMG_3078.jpeg",
     "description": "Photo taken on 2024:06:23 13:42:31 at 48.574336111111116, -113.49868888888889"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3079.jpeg",
-    "width": 756,
-    "height": 1008,
-    "dateTime": "2024:06:23 13:49:43",
-    "title": "IMG_3079.jpeg",
-    "description": "Photo taken on 2024:06:23 13:49:43 at 48.57436666666667, -113.49365277777778"
   },
   {
     "src": "/CDTvisPhotos/IMG_3082.jpeg",
@@ -816,14 +776,6 @@ export const photos = [
     "description": "Photo taken on 2024:06:24 11:15:38 at 48.51736944444444, -113.46152500000001"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3119.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:06:24 12:26:39",
-    "title": "IMG_3119.jpeg",
-    "description": "Photo taken on 2024:06:24 12:26:39 at 48.517175, -113.45898333333334"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3121.jpeg",
     "width": 2511,
     "height": 967,
@@ -854,14 +806,6 @@ export const photos = [
     "dateTime": "2024:06:25 10:15:15",
     "title": "IMG_3131.jpeg",
     "description": "Photo taken on 2024:06:25 10:15:15 at 48.479736111111116, -113.34958611111111"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3137.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:06:25 10:58:08",
-    "title": "IMG_3137.jpeg",
-    "description": "Photo taken on 2024:06:25 10:58:08 at 48.47858888888889, -113.34262222222222"
   },
   {
     "src": "/CDTvisPhotos/IMG_3140.jpeg",
@@ -904,14 +848,6 @@ export const photos = [
     "description": "Photo taken on 2024:06:25 12:32:09 at 48.48540555555556, -113.31542222222222"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3159.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:06:25 12:32:12",
-    "title": "IMG_3159.jpeg",
-    "description": "Photo taken on 2024:06:25 12:32:12 at 48.48543611111111, -113.3154611111111"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3160.jpeg",
     "width": 880,
     "height": 495,
@@ -952,36 +888,12 @@ export const photos = [
     "description": "Photo taken on 2024:06:25 15:00:41 at 48.45518055555556, -113.25670555555556"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3229.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:06:28 19:14:01",
-    "title": "IMG_3229.jpeg",
-    "description": "Photo taken on 2024:06:28 19:14:01 at 48.269333333333336, -113.17030277777778"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3231.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:06:29 09:16:52",
-    "title": "IMG_3231.jpeg",
-    "description": "Photo taken on 2024:06:29 09:16:52 at 48.25458888888889, -113.15576944444445"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3237.jpeg",
     "width": 2979,
     "height": 968,
     "dateTime": "2024:06:29 10:38:33",
     "title": "IMG_3237.jpeg",
     "description": "Photo taken on 2024:06:29 10:38:33 at 48.248066666666666, -113.1940388888889"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3238.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:06:29 12:55:05",
-    "title": "IMG_3238.jpeg",
-    "description": "Photo taken on 2024:06:29 12:55:05 at 48.22479722222222, -113.20861111111111"
   },
   {
     "src": "/CDTvisPhotos/IMG_3258.jpeg",
@@ -1120,14 +1032,6 @@ export const photos = [
     "description": "Photo taken on 2024:07:03 16:34:18 at 47.71049166666667, -113.1567"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3328.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:07:03 16:34:37",
-    "title": "IMG_3328.jpeg",
-    "description": "Photo taken on 2024:07:03 16:34:37 at 47.710525000000004, -113.15665555555556"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3329.jpeg",
     "width": 1008,
     "height": 756,
@@ -1136,28 +1040,12 @@ export const photos = [
     "description": "Photo taken on 2024:07:03 16:39:46 at 47.709586111111115, -113.15602222222223"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3331.jpeg",
-    "width": 756,
-    "height": 1008,
-    "dateTime": "2024:07:03 16:59:40",
-    "title": "IMG_3331.jpeg",
-    "description": "Photo taken on 2024:07:03 16:59:40 at 47.70023611111112, -113.1526638888889"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3334.jpeg",
     "width": 1930,
     "height": 980,
     "dateTime": "2024:07:04 09:28:53",
     "title": "IMG_3334.jpeg",
     "description": "Photo taken on 2024:07:04 09:28:53 at 47.69438611111111, -113.1475138888889"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3339.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:07:04 10:36:38",
-    "title": "IMG_3339.jpeg",
-    "description": "Photo taken on 2024:07:04 10:36:38 at 47.6689, -113.13380555555557"
   },
   {
     "src": "/CDTvisPhotos/IMG_3341.jpeg",
@@ -1360,14 +1248,6 @@ export const photos = [
     "description": "Photo taken on 2024:07:10 15:17:27 at 47.03261944444444, -112.31694166666666"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3554.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:07:11 06:19:42",
-    "title": "IMG_3554.jpeg",
-    "description": "Photo taken on 2024:07:11 06:19:42 at undefined, NaN"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3554.jpg",
     "width": 4032,
     "height": 3024,
@@ -1488,22 +1368,6 @@ export const photos = [
     "description": "Photo taken on 2024:07:23 14:08:03 at 46.06392777777778, -113.22876111111111"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3699.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:07:23 15:58:49",
-    "title": "IMG_3699.jpeg",
-    "description": "Photo taken on 2024:07:23 15:58:49 at undefined, NaN"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3699.jpg",
-    "width": 4032,
-    "height": 3024,
-    "dateTime": "2024:07:23 15:58:49",
-    "title": "IMG_3699.jpg",
-    "description": "Photo taken on 2024:07:23 15:58:49 at undefined, NaN"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3700.jpg",
     "width": 4032,
     "height": 3024,
@@ -1534,14 +1398,6 @@ export const photos = [
     "dateTime": "2024:07:23 17:37:00",
     "title": "IMG_3709.jpeg",
     "description": "Photo taken on 2024:07:23 17:37:00 at 46.05381666666666, -113.27822777777777"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3711.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:07:24 07:45:38",
-    "title": "IMG_3711.jpeg",
-    "description": "Photo taken on 2024:07:24 07:45:38 at undefined, NaN"
   },
   {
     "src": "/CDTvisPhotos/IMG_3711.jpg",
@@ -1592,14 +1448,6 @@ export const photos = [
     "description": "Photo taken on 2024:07:25 10:53:41 at 45.94501111111111, -113.48448888888889"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3735.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:07:25 10:53:50",
-    "title": "IMG_3735.jpeg",
-    "description": "Photo taken on 2024:07:25 10:53:50 at 45.94334444444444, -113.485375"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3739.jpeg",
     "width": 1008,
     "height": 756,
@@ -1614,14 +1462,6 @@ export const photos = [
     "dateTime": "2024:07:25 17:05:19",
     "title": "IMG_3741.jpeg",
     "description": "Photo taken on 2024:07:25 17:05:19 at 45.87425555555556, -113.56337777777777"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3746.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:07:26 08:57:23",
-    "title": "IMG_3746.jpeg",
-    "description": "Photo taken on 2024:07:26 08:57:23 at 45.83780277777778, -113.6705388888889"
   },
   {
     "src": "/CDTvisPhotos/IMG_3748.jpeg",
@@ -1662,14 +1502,6 @@ export const photos = [
     "dateTime": "2024:07:26 16:19:46",
     "title": "IMG_3754.jpeg",
     "description": "Photo taken on 2024:07:26 16:19:46 at 45.75216666666667, -113.83020833333333"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3756.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:07:26 16:42:05",
-    "title": "IMG_3756.jpeg",
-    "description": "Photo taken on 2024:07:26 16:42:05 at 45.74554444444445, -113.84523888888889"
   },
   {
     "src": "/CDTvisPhotos/IMG_3757.jpeg",
@@ -1832,14 +1664,6 @@ export const photos = [
     "description": "Photo taken on 2024:07:31 12:02:38 at 44.54680277777778, -111.64188333333334"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3883.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:07:31 13:10:46",
-    "title": "IMG_3883.jpeg",
-    "description": "Photo taken on 2024:07:31 13:10:46 at 44.550533333333334, -111.6095111111111"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_3885.jpeg",
     "width": 1428,
     "height": 1071,
@@ -1910,14 +1734,6 @@ export const photos = [
     "dateTime": "2024:08:02 07:58:25",
     "title": "IMG_3927.jpeg",
     "description": "Photo taken on 2024:08:02 07:58:25 at 44.73096944444445, -111.33982222222222"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_3928.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:08:02 07:58:30",
-    "title": "IMG_3928.jpeg",
-    "description": "Photo taken on 2024:08:02 07:58:30 at 44.73102222222222, -111.33969166666667"
   },
   {
     "src": "/CDTvisPhotos/IMG_3931.jpeg",
@@ -2032,14 +1848,6 @@ export const photos = [
     "description": "Photo taken on 2024:08:06 15:42:41 at 44.45992777777778, -110.8313"
   },
   {
-    "src": "/CDTvisPhotos/IMG_3999.jpg",
-    "width": 5712,
-    "height": 4284,
-    "dateTime": "2024:08:07 06:43:12",
-    "title": "IMG_3999.jpg",
-    "description": "Photo taken on 2024:08:07 06:43:12 at undefined, NaN"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4001.jpg",
     "width": 4032,
     "height": 3024,
@@ -2080,14 +1888,6 @@ export const photos = [
     "description": "Photo taken on 2024:08:07 14:37:54 at 44.418216666666666, -110.80638055555555"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4027.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:08:07 15:01:12",
-    "title": "IMG_4027.jpeg",
-    "description": "Photo taken on 2024:08:07 15:01:12 at 44.41852222222222, -110.80590833333333"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4040.jpeg",
     "width": 1008,
     "height": 756,
@@ -2110,14 +1910,6 @@ export const photos = [
     "dateTime": "2024:08:08 10:25:03",
     "title": "IMG_4050.jpeg",
     "description": "Photo taken on 2024:08:08 10:25:03 at 44.29816944444444, -110.51688333333333"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4053.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:08:08 10:54:31",
-    "title": "IMG_4053.jpeg",
-    "description": "Photo taken on 2024:08:08 10:54:31 at 44.28715555555555, -110.49910833333334"
   },
   {
     "src": "/CDTvisPhotos/IMG_4056.jpeg",
@@ -2166,30 +1958,6 @@ export const photos = [
     "dateTime": "2024:08:09 17:17:08",
     "title": "IMG_4085.jpg",
     "description": "Photo taken on 2024:08:09 17:17:08 at 43.993805555555554, -110.18086111111111"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4086.jpg",
-    "width": 4032,
-    "height": 3024,
-    "dateTime": "2024:08:09 17:29:39",
-    "title": "IMG_4086.jpg",
-    "description": "Photo taken on 2024:08:09 17:29:39 at 43.986180555555556, -110.18357222222222"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4087.jpg",
-    "width": 4032,
-    "height": 3024,
-    "dateTime": "2024:08:09 17:29:42",
-    "title": "IMG_4087.jpg",
-    "description": "Photo taken on 2024:08:09 17:29:42 at 43.98615, -110.18357777777778"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4088.jpg",
-    "width": 5712,
-    "height": 4284,
-    "dateTime": "2024:08:09 17:32:30",
-    "title": "IMG_4088.jpg",
-    "description": "Photo taken on 2024:08:09 17:32:30 at undefined, NaN"
   },
   {
     "src": "/CDTvisPhotos/IMG_4089.jpg",
@@ -2272,28 +2040,12 @@ export const photos = [
     "description": "Photo taken on 2024:08:10 14:25:21 at 43.870133333333335, -110.08217499999999"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4129.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:08:10 15:01:49",
-    "title": "IMG_4129.jpeg",
-    "description": "Photo taken on 2024:08:10 15:01:49 at 43.86085, -110.08284722222221"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4133.jpeg",
     "width": 1428,
     "height": 1071,
     "dateTime": "2024:08:10 18:36:11",
     "title": "IMG_4133.jpeg",
     "description": "Photo taken on 2024:08:10 18:36:11 at 43.823883333333335, -110.03265277777777"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4134.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:08:10 18:36:43",
-    "title": "IMG_4134.jpeg",
-    "description": "Photo taken on 2024:08:10 18:36:43 at 43.82383055555556, -110.0325"
   },
   {
     "src": "/CDTvisPhotos/IMG_4137.jpeg",
@@ -2342,22 +2094,6 @@ export const photos = [
     "dateTime": "2024:08:11 11:23:14",
     "title": "IMG_4155.jpeg",
     "description": "Photo taken on 2024:08:11 11:23:14 at 43.75416666666667, -110.03918333333333"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4159.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:08:11 11:31:45",
-    "title": "IMG_4159.jpeg",
-    "description": "Photo taken on 2024:08:11 11:31:45 at 43.75275555555555, -110.04058055555555"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4163.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:08:11 11:59:23",
-    "title": "IMG_4163.jpeg",
-    "description": "Photo taken on 2024:08:11 11:59:23 at 43.75353333333333, -110.05745833333333"
   },
   {
     "src": "/CDTvisPhotos/IMG_4208.jpeg",
@@ -2440,28 +2176,12 @@ export const photos = [
     "description": "Photo taken on 2024:08:16 08:17:47 at 43.35326388888889, -109.85147777777777"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4266.jpg",
-    "width": 4032,
-    "height": 3024,
-    "dateTime": "2024:08:16 09:26:08",
-    "title": "IMG_4266.jpg",
-    "description": "Photo taken on 2024:08:16 09:26:08 at undefined, NaN"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4267.jpg",
     "width": 5712,
     "height": 4284,
     "dateTime": "2024:08:16 09:26:09",
     "title": "IMG_4267.jpg",
     "description": "Photo taken on 2024:08:16 09:26:09 at undefined, NaN"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4272.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:08:16 09:41:17",
-    "title": "IMG_4272.jpeg",
-    "description": "Photo taken on 2024:08:16 09:41:17 at 43.31206944444444, -109.85568333333333"
   },
   {
     "src": "/CDTvisPhotos/IMG_4274.jpeg",
@@ -2526,14 +2246,6 @@ export const photos = [
     "dateTime": "2024:08:16 13:04:21",
     "title": "IMG_4285.jpg",
     "description": "Photo taken on 2024:08:16 13:04:21 at undefined, NaN"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4286.jpg",
-    "width": 5712,
-    "height": 4284,
-    "dateTime": "2024:08:16 13:05:05",
-    "title": "IMG_4286.jpg",
-    "description": "Photo taken on 2024:08:16 13:05:05 at 43.274658333333335, -109.82079999999999"
   },
   {
     "src": "/CDTvisPhotos/IMG_4297.jpeg",
@@ -2752,14 +2464,6 @@ export const photos = [
     "description": "Photo taken on 2024:08:18 06:24:58 at 43.14126944444445, -109.64043333333333"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4416.jpg",
-    "width": 5712,
-    "height": 4284,
-    "dateTime": "2024:08:18 06:40:11",
-    "title": "IMG_4416.jpg",
-    "description": "Photo taken on 2024:08:18 06:40:11 at undefined, NaN"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4418.jpg",
     "width": 5712,
     "height": 4284,
@@ -2776,14 +2480,6 @@ export const photos = [
     "description": "Photo taken on 2024:08:18 07:43:18 at 43.13165277777778, -109.63806111111111"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4427.jpg",
-    "width": 5712,
-    "height": 4284,
-    "dateTime": "2024:08:18 08:04:46",
-    "title": "IMG_4427.jpg",
-    "description": "Photo taken on 2024:08:18 08:04:46 at undefined, NaN"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4429.jpeg",
     "width": 1428,
     "height": 1071,
@@ -2798,14 +2494,6 @@ export const photos = [
     "dateTime": "2024:08:18 08:06:53",
     "title": "IMG_4430.jpeg",
     "description": "Photo taken on 2024:08:18 08:06:53 at 43.12303055555556, -109.63775000000001"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4436.jpeg",
-    "width": 1821,
-    "height": 969,
-    "dateTime": "2024:08:18 08:17:17",
-    "title": "IMG_4436.jpeg",
-    "description": "Photo taken on 2024:08:18 08:17:17 at 43.11910555555556, -109.63599444444445"
   },
   {
     "src": "/CDTvisPhotos/IMG_4438.jpeg",
@@ -2888,14 +2576,6 @@ export const photos = [
     "description": "Photo taken on 2024:08:19 15:41:01 at 42.86533055555556, -109.85392777777777"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4515.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:08:20 14:18:01",
-    "title": "IMG_4515.jpeg",
-    "description": "Photo taken on 2024:08:20 14:18:01 at 43.01883055555555, -109.68566111111112"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4516.jpeg",
     "width": 1008,
     "height": 756,
@@ -2920,28 +2600,12 @@ export const photos = [
     "description": "Photo taken on 2024:08:20 17:04:40 at undefined, NaN"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4529.jpg",
-    "width": 4032,
-    "height": 3024,
-    "dateTime": "2024:08:20 17:04:41",
-    "title": "IMG_4529.jpg",
-    "description": "Photo taken on 2024:08:20 17:04:41 at 43.01929166666667, -109.61074722222222"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4530.jpeg",
     "width": 1071,
     "height": 1428,
     "dateTime": "2024:08:20 17:14:14",
     "title": "IMG_4530.jpeg",
     "description": "Photo taken on 2024:08:20 17:14:14 at 43.02103888888889, -109.60805555555555"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4532.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:08:20 17:47:52",
-    "title": "IMG_4532.jpeg",
-    "description": "Photo taken on 2024:08:20 17:47:52 at 43.01772222222222, -109.59477222222222"
   },
   {
     "src": "/CDTvisPhotos/IMG_4542.jpeg",
@@ -2992,22 +2656,6 @@ export const photos = [
     "description": "Photo taken on 2024:08:21 09:59:25 at 42.95981944444445, -109.54006944444444"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4568.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:08:21 10:12:33",
-    "title": "IMG_4568.jpeg",
-    "description": "Photo taken on 2024:08:21 10:12:33 at 42.95668888888889, -109.53475833333333"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4571.jpg",
-    "width": 5712,
-    "height": 4284,
-    "dateTime": "2024:08:21 11:52:34",
-    "title": "IMG_4571.jpg",
-    "description": "Photo taken on 2024:08:21 11:52:34 at undefined, NaN"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4572.jpg",
     "width": 5712,
     "height": 4284,
@@ -3054,14 +2702,6 @@ export const photos = [
     "dateTime": "2024:08:22 08:26:20",
     "title": "IMG_4594.jpeg",
     "description": "Photo taken on 2024:08:22 08:26:20 at 42.804341666666666, -109.33277777777778"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4596.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:08:22 08:31:00",
-    "title": "IMG_4596.jpeg",
-    "description": "Photo taken on 2024:08:22 08:31:00 at 42.80405833333333, -109.32845277777777"
   },
   {
     "src": "/CDTvisPhotos/IMG_4605.jpeg",
@@ -3136,14 +2776,6 @@ export const photos = [
     "description": "Photo taken on 2024:08:22 15:33:15 at 42.78086388888889, -109.21851388888889"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4642.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:08:22 15:39:30",
-    "title": "IMG_4642.jpeg",
-    "description": "Photo taken on 2024:08:22 15:39:30 at 42.779444444444444, -109.21809444444445"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4646.jpeg",
     "width": 1428,
     "height": 1071,
@@ -3182,14 +2814,6 @@ export const photos = [
     "dateTime": "2024:08:22 16:18:35",
     "title": "IMG_4666.jpeg",
     "description": "Photo taken on 2024:08:22 16:18:35 at 42.77140555555555, -109.21349444444445"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4668.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:08:22 16:18:42",
-    "title": "IMG_4668.jpeg",
-    "description": "Photo taken on 2024:08:22 16:18:42 at 42.771411111111114, -109.2135"
   },
   {
     "src": "/CDTvisPhotos/IMG_4672.jpeg",
@@ -3400,22 +3024,6 @@ export const photos = [
     "description": "Photo taken on 2024:08:23 12:15:04 at undefined, NaN"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4814.jpg",
-    "width": 4032,
-    "height": 3024,
-    "dateTime": "2024:08:23 12:15:06",
-    "title": "IMG_4814.jpg",
-    "description": "Photo taken on 2024:08:23 12:15:06 at 42.656413888888885, -109.12450277777778"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4819.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:08:23 17:07:04",
-    "title": "IMG_4819.jpeg",
-    "description": "Photo taken on 2024:08:23 17:07:04 at 42.58128611111111, -109.08757777777777"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4820.jpeg",
     "width": 1428,
     "height": 1071,
@@ -3424,28 +3032,12 @@ export const photos = [
     "description": "Photo taken on 2024:08:23 17:07:12 at 42.581386111111115, -109.0874861111111"
   },
   {
-    "src": "/CDTvisPhotos/IMG_4824.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:08:23 18:54:50",
-    "title": "IMG_4824.jpeg",
-    "description": "Photo taken on 2024:08:23 18:54:50 at 42.54933055555556, -109.05052222222221"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_4830.jpeg",
     "width": 1428,
     "height": 1071,
     "dateTime": "2024:08:24 12:20:28",
     "title": "IMG_4830.jpeg",
     "description": "Photo taken on 2024:08:24 12:20:28 at 42.48471111111111, -108.87126944444444"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_4833.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:08:24 12:37:58",
-    "title": "IMG_4833.jpeg",
-    "description": "Photo taken on 2024:08:24 12:37:58 at 42.478322222222225, -108.86203888888889"
   },
   {
     "src": "/CDTvisPhotos/IMG_4840.jpeg",
@@ -3688,14 +3280,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:02 12:57:24 at 40.89264166666667, -106.80148333333334"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5084.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:02 13:00:48",
-    "title": "IMG_5084.jpeg",
-    "description": "Photo taken on 2024:09:02 13:00:48 at undefined, NaN"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5087.jpeg",
     "width": 1428,
     "height": 1071,
@@ -3776,14 +3360,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:04 17:23:15 at 40.48225, -106.82882777777778"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5180.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:06 13:16:39",
-    "title": "IMG_5180.jpeg",
-    "description": "Photo taken on 2024:09:06 13:16:39 at 40.33488055555556, -106.31913055555555"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5182.jpeg",
     "width": 1428,
     "height": 1071,
@@ -3806,14 +3382,6 @@ export const photos = [
     "dateTime": "2024:09:06 17:55:49",
     "title": "IMG_5193.jpeg",
     "description": "Photo taken on 2024:09:06 17:55:49 at 40.35847777777778, -106.26487777777778"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5196.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:06 18:09:24",
-    "title": "IMG_5196.jpeg",
-    "description": "Photo taken on 2024:09:06 18:09:24 at 40.35485, -106.25746944444444"
   },
   {
     "src": "/CDTvisPhotos/IMG_5205.jpeg",
@@ -3894,14 +3462,6 @@ export const photos = [
     "dateTime": "2024:09:07 14:08:54",
     "title": "IMG_5236.jpeg",
     "description": "Photo taken on 2024:09:07 14:08:54 at 40.33047222222223, -106.13626111111111"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5244.jpeg",
-    "width": 2096,
-    "height": 947,
-    "dateTime": "2024:09:07 14:18:08",
-    "title": "IMG_5244.jpeg",
-    "description": "Photo taken on 2024:09:07 14:18:08 at 40.33483888888889, -106.13500277777779"
   },
   {
     "src": "/CDTvisPhotos/IMG_5246.jpeg",
@@ -4096,14 +3656,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:11 18:43:31 at 39.942097222222216, -105.68748611111111"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5354.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:11 19:08:52",
-    "title": "IMG_5354.jpeg",
-    "description": "Photo taken on 2024:09:11 19:08:52 at 39.94210555555555, -105.68743055555557"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5355.jpeg",
     "width": 1008,
     "height": 756,
@@ -4160,28 +3712,12 @@ export const photos = [
     "description": "Photo taken on 2024:09:12 10:08:07 at 39.88883333333333, -105.69979722222223"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5379.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:12 10:16:20",
-    "title": "IMG_5379.jpeg",
-    "description": "Photo taken on 2024:09:12 10:16:20 at undefined, NaN"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5381.jpeg",
     "width": 1428,
     "height": 1071,
     "dateTime": "2024:09:12 10:34:03",
     "title": "IMG_5381.jpeg",
     "description": "Photo taken on 2024:09:12 10:34:03 at 39.875375, -105.69990555555556"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5384.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:12 10:37:15",
-    "title": "IMG_5384.jpeg",
-    "description": "Photo taken on 2024:09:12 10:37:15 at 39.87377222222222, -105.69946388888889"
   },
   {
     "src": "/CDTvisPhotos/IMG_5388.jpeg",
@@ -4230,14 +3766,6 @@ export const photos = [
     "dateTime": "2024:09:12 18:28:52",
     "title": "IMG_5405.jpeg",
     "description": "Photo taken on 2024:09:12 18:28:52 at 39.804991666666666, -105.708375"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5406.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:12 18:28:54",
-    "title": "IMG_5406.jpeg",
-    "description": "Photo taken on 2024:09:12 18:28:54 at 39.80499722222222, -105.70836666666666"
   },
   {
     "src": "/CDTvisPhotos/IMG_5408.jpeg",
@@ -4360,14 +3888,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:13 12:47:39 at 39.790977777777776, -105.81285"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5438.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:13 13:05:35",
-    "title": "IMG_5438.jpeg",
-    "description": "Photo taken on 2024:09:13 13:05:35 at 39.78588055555555, -105.8226"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5446.jpeg",
     "width": 1428,
     "height": 1071,
@@ -4382,14 +3902,6 @@ export const photos = [
     "dateTime": "2024:09:13 16:38:09",
     "title": "IMG_5448.jpeg",
     "description": "Photo taken on 2024:09:13 16:38:09 at 39.78131111111111, -105.85657499999999"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5450.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:13 17:04:21",
-    "title": "IMG_5450.jpeg",
-    "description": "Photo taken on 2024:09:13 17:04:21 at 39.79175277777777, -105.8604361111111"
   },
   {
     "src": "/CDTvisPhotos/IMG_5453.jpeg",
@@ -4416,28 +3928,12 @@ export const photos = [
     "description": "Photo taken on 2024:09:13 17:43:10 at 39.801113888888885, -105.87649444444443"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5457.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:13 17:43:28",
-    "title": "IMG_5457.jpeg",
-    "description": "Photo taken on 2024:09:13 17:43:28 at 39.801113888888885, -105.87649444444443"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5460.jpeg",
     "width": 1428,
     "height": 1071,
     "dateTime": "2024:09:13 17:58:59",
     "title": "IMG_5460.jpeg",
     "description": "Photo taken on 2024:09:13 17:58:59 at 39.79821388888889, -105.88209444444443"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5461.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:13 17:59:01",
-    "title": "IMG_5461.jpeg",
-    "description": "Photo taken on 2024:09:13 17:59:01 at 39.79823333333333, -105.88211944444444"
   },
   {
     "src": "/CDTvisPhotos/IMG_5464.jpeg",
@@ -4496,28 +3992,12 @@ export const photos = [
     "description": "Photo taken on 2024:09:13 19:40:34 at 39.77254166666667, -105.8884888888889"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5476.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:13 19:52:17",
-    "title": "IMG_5476.jpeg",
-    "description": "Photo taken on 2024:09:13 19:52:17 at 39.77258611111111, -105.88845833333335"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5478.jpeg",
     "width": 1008,
     "height": 756,
     "dateTime": "2024:09:14 07:13:28",
     "title": "IMG_5478.jpeg",
     "description": "Photo taken on 2024:09:14 07:13:28 at 39.77258611111111, -105.8884888888889"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5480.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:14 09:13:39",
-    "title": "IMG_5480.jpeg",
-    "description": "Photo taken on 2024:09:14 09:13:39 at 39.764041666666664, -105.88579444444446"
   },
   {
     "src": "/CDTvisPhotos/IMG_5483.jpeg",
@@ -4534,14 +4014,6 @@ export const photos = [
     "dateTime": "2024:09:14 09:20:00",
     "title": "IMG_5487.jpeg",
     "description": "Photo taken on 2024:09:14 09:20:00 at 39.76312222222222, -105.88354444444445"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5490.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:14 11:00:24",
-    "title": "IMG_5490.jpeg",
-    "description": "Photo taken on 2024:09:14 11:00:24 at undefined, NaN"
   },
   {
     "src": "/CDTvisPhotos/IMG_5491.jpeg",
@@ -4584,28 +4056,12 @@ export const photos = [
     "description": "Photo taken on 2024:09:15 08:07:12 at 39.64286388888889, -105.80986666666666"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5509.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:15 08:24:56",
-    "title": "IMG_5509.jpeg",
-    "description": "Photo taken on 2024:09:15 08:24:56 at 39.64227777777778, -105.809525"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5510.jpeg",
     "width": 1008,
     "height": 756,
     "dateTime": "2024:09:15 08:24:57",
     "title": "IMG_5510.jpeg",
     "description": "Photo taken on 2024:09:15 08:24:57 at 39.64228055555556, -105.80951666666667"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5513.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:15 08:25:09",
-    "title": "IMG_5513.jpeg",
-    "description": "Photo taken on 2024:09:15 08:25:09 at 39.64228055555556, -105.809525"
   },
   {
     "src": "/CDTvisPhotos/IMG_5515.jpeg",
@@ -4680,14 +4136,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:15 10:42:27 at 39.634144444444445, -105.81548333333333"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5546.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:15 10:55:58",
-    "title": "IMG_5546.jpeg",
-    "description": "Photo taken on 2024:09:15 10:55:58 at 39.63574722222222, -105.81082777777777"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5548.jpeg",
     "width": 1008,
     "height": 756,
@@ -4744,14 +4192,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:15 11:44:51 at 39.6357, -105.80036944444444"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5572.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:15 11:44:56",
-    "title": "IMG_5572.jpeg",
-    "description": "Photo taken on 2024:09:15 11:44:56 at 39.6357, -105.80039166666667"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5576.jpeg",
     "width": 1428,
     "height": 1071,
@@ -4768,14 +4208,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:15 12:18:43 at 39.63653611111111, -105.796875"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5581.JPG",
-    "width": 880,
-    "height": 495,
-    "dateTime": "2024:09:15 12:24:38",
-    "title": "IMG_5581.JPG",
-    "description": "Photo taken on 2024:09:15 12:24:38 at 39.63646388888889, -105.79549444444444"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5581.jpeg",
     "width": 880,
     "height": 495,
@@ -4790,14 +4222,6 @@ export const photos = [
     "dateTime": "2024:09:15 12:26:22",
     "title": "IMG_5588.jpeg",
     "description": "Photo taken on 2024:09:15 12:26:22 at 39.636291666666665, -105.79418888888888"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5589.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:15 12:26:47",
-    "title": "IMG_5589.jpeg",
-    "description": "Photo taken on 2024:09:15 12:26:47 at 39.636383333333335, -105.793975"
   },
   {
     "src": "/CDTvisPhotos/IMG_5594.jpeg",
@@ -4830,14 +4254,6 @@ export const photos = [
     "dateTime": "2024:09:15 12:38:31",
     "title": "IMG_5599.jpeg",
     "description": "Photo taken on 2024:09:15 12:38:31 at 39.63323888888889, -105.78916111111111"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5600.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:15 12:38:48",
-    "title": "IMG_5600.jpeg",
-    "description": "Photo taken on 2024:09:15 12:38:48 at 39.63321388888889, -105.78912222222222"
   },
   {
     "src": "/CDTvisPhotos/IMG_5602.jpeg",
@@ -4880,14 +4296,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:15 14:11:02 at 39.612183333333334, -105.77711388888889"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5621.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:15 14:11:04",
-    "title": "IMG_5621.jpeg",
-    "description": "Photo taken on 2024:09:15 14:11:04 at 39.61217777777778, -105.77711388888889"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5622.jpeg",
     "width": 1008,
     "height": 756,
@@ -4912,28 +4320,12 @@ export const photos = [
     "description": "Photo taken on 2024:09:15 15:43:17 at 39.59461944444445, -105.7954861111111"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5631.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:15 16:04:15",
-    "title": "IMG_5631.jpeg",
-    "description": "Photo taken on 2024:09:15 16:04:15 at 39.58551666666667, -105.80836388888889"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5635.jpeg",
     "width": 1008,
     "height": 756,
     "dateTime": "2024:09:15 16:06:50",
     "title": "IMG_5635.jpeg",
     "description": "Photo taken on 2024:09:15 16:06:50 at 39.58523888888889, -105.80903611111111"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5640.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:15 16:28:25",
-    "title": "IMG_5640.jpeg",
-    "description": "Photo taken on 2024:09:15 16:28:25 at 39.58139722222223, -105.818275"
   },
   {
     "src": "/CDTvisPhotos/IMG_5690.jpeg",
@@ -5048,14 +4440,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:21 12:07:58 at 39.10766944444445, -106.39441666666667"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5749.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:21 12:29:06",
-    "title": "IMG_5749.jpeg",
-    "description": "Photo taken on 2024:09:21 12:29:06 at 39.09806944444445, -106.39005277777778"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5752.jpeg",
     "width": 1428,
     "height": 1071,
@@ -5168,22 +4552,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:22 16:02:44 at 39.009566666666665, -106.40381666666667"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5816.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:22 16:04:58",
-    "title": "IMG_5816.jpeg",
-    "description": "Photo taken on 2024:09:22 16:04:58 at 39.00875833333333, -106.40404444444445"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5818.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:22 16:05:07",
-    "title": "IMG_5818.jpeg",
-    "description": "Photo taken on 2024:09:22 16:05:07 at 39.00853055555555, -106.4041888888889"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5820.jpeg",
     "width": 1428,
     "height": 1071,
@@ -5238,14 +4606,6 @@ export const photos = [
     "dateTime": "2024:09:22 17:51:21",
     "title": "IMG_5846.jpeg",
     "description": "Photo taken on 2024:09:22 17:51:21 at 38.98863333333333, -106.44459444444445"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5851.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:23 08:41:09",
-    "title": "IMG_5851.jpeg",
-    "description": "Photo taken on 2024:09:23 08:41:09 at 38.973733333333335, -106.45932777777779"
   },
   {
     "src": "/CDTvisPhotos/IMG_5852.jpeg",
@@ -5360,28 +4720,12 @@ export const photos = [
     "description": "Photo taken on 2024:09:24 11:00:54 at 38.80589722222222, -106.42146944444445"
   },
   {
-    "src": "/CDTvisPhotos/IMG_5900.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:24 12:47:26",
-    "title": "IMG_5900.jpeg",
-    "description": "Photo taken on 2024:09:24 12:47:26 at 38.77511944444444, -106.41234722222222"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_5905.jpeg",
     "width": 1428,
     "height": 1071,
     "dateTime": "2024:09:24 12:50:56",
     "title": "IMG_5905.jpeg",
     "description": "Photo taken on 2024:09:24 12:50:56 at 38.77393333333333, -106.41217777777779"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5907.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:24 12:58:44",
-    "title": "IMG_5907.jpeg",
-    "description": "Photo taken on 2024:09:24 12:58:44 at 38.769733333333335, -106.41363611111112"
   },
   {
     "src": "/CDTvisPhotos/IMG_5910.jpeg",
@@ -5398,14 +4742,6 @@ export const photos = [
     "dateTime": "2024:09:24 17:10:18",
     "title": "IMG_5913.jpeg",
     "description": "Photo taken on 2024:09:24 17:10:18 at undefined, NaN"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_5914.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:24 17:10:20",
-    "title": "IMG_5914.jpeg",
-    "description": "Photo taken on 2024:09:24 17:10:20 at 38.717258333333334, -106.41265"
   },
   {
     "src": "/CDTvisPhotos/IMG_5922.jpeg",
@@ -5536,14 +4872,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:28 10:25:53 at 37.87883055555556, -107.32962777777777"
   },
   {
-    "src": "/CDTvisPhotos/IMG_6070.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:28 10:50:53",
-    "title": "IMG_6070.jpeg",
-    "description": "Photo taken on 2024:09:28 10:50:53 at 37.87068611111111, -107.33964444444445"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_6073.jpeg",
     "width": 1428,
     "height": 1071,
@@ -5640,14 +4968,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:28 16:07:38 at 37.845225, -107.43876666666667"
   },
   {
-    "src": "/CDTvisPhotos/IMG_6136.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:28 16:30:13",
-    "title": "IMG_6136.jpeg",
-    "description": "Photo taken on 2024:09:28 16:30:13 at 37.846333333333334, -107.447075"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_6139.jpeg",
     "width": 1428,
     "height": 1071,
@@ -5720,14 +5040,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:28 18:33:00 at 37.84766666666667, -107.47215277777778"
   },
   {
-    "src": "/CDTvisPhotos/IMG_6161.jpeg",
-    "width": 1008,
-    "height": 756,
-    "dateTime": "2024:09:28 18:34:43",
-    "title": "IMG_6161.jpeg",
-    "description": "Photo taken on 2024:09:28 18:34:43 at 37.84805277777778, -107.47244166666667"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_6164.jpeg",
     "width": 1428,
     "height": 1071,
@@ -5766,14 +5078,6 @@ export const photos = [
     "dateTime": "2024:09:29 10:25:48",
     "title": "IMG_6170.jpeg",
     "description": "Photo taken on 2024:09:29 10:25:48 at 37.82376388888889, -107.52069722222222"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_6171.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:29 10:30:11",
-    "title": "IMG_6171.jpeg",
-    "description": "Photo taken on 2024:09:29 10:30:11 at undefined, NaN"
   },
   {
     "src": "/CDTvisPhotos/IMG_6179.jpeg",
@@ -5888,14 +5192,6 @@ export const photos = [
     "description": "Photo taken on 2024:09:30 10:44:35 at 37.68357222222222, -107.50591388888888"
   },
   {
-    "src": "/CDTvisPhotos/IMG_6246.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:30 10:44:57",
-    "title": "IMG_6246.jpeg",
-    "description": "Photo taken on 2024:09:30 10:44:57 at 37.68357222222222, -107.50595"
-  },
-  {
     "src": "/CDTvisPhotos/IMG_6253.jpeg",
     "width": 1428,
     "height": 1071,
@@ -5950,14 +5246,6 @@ export const photos = [
     "dateTime": "2024:09:30 13:28:57",
     "title": "IMG_6276.jpeg",
     "description": "Photo taken on 2024:09:30 13:28:57 at 37.65295277777778, -107.47519722222222"
-  },
-  {
-    "src": "/CDTvisPhotos/IMG_6281.jpeg",
-    "width": 1428,
-    "height": 1071,
-    "dateTime": "2024:09:30 15:42:30",
-    "title": "IMG_6281.jpeg",
-    "description": "Photo taken on 2024:09:30 15:42:30 at 37.63863333333333, -107.44013333333334"
   },
   {
     "src": "/CDTvisPhotos/IMG_6285.jpeg",
