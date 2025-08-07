@@ -78,7 +78,12 @@ fs.readdir(dirPath, { withFileTypes: true }, (err, entries) => {
   if (err) throw err;
 
   const files = entries
-    .filter((entry) => entry.isFile())
+    .filter(
+      (entry) =>
+        entry.isFile() &&
+        (entry.name.toLowerCase().endsWith(".jpg") ||
+          entry.name.toLowerCase().endsWith(".jpeg"))
+    )
     .map((file) => `public/CDTvisPhotos/${file.name}`);
 
   fs.writeFileSync(outputFile, JSON.stringify(files, null, 2));
