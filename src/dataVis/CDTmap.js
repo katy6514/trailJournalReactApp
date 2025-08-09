@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useMemo } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+
 import * as d3 from "d3";
 
 import { width, height, cities, colors } from "./constants.js";
@@ -79,7 +78,6 @@ const CDTmap = ({ user }) => {
     ----------------------------------------------------- */
 
     d3.json("/CDT_complete_tracks.json").then((data) => {
-      console.log(data); // inspect structure
       g.selectAll(".trail")
         .data(data.features)
         .enter()
@@ -90,7 +88,7 @@ const CDTmap = ({ user }) => {
         .attr("stroke", (d) => getAlternatingColor(d.properties))
         .attr("stroke-width", 2)
         .attr("fill", "none")
-        .on("mouseover", handleMouseOver)
+        .on("mouseover", handleMouseOver(user))
         .on("mousemove", handleMouseMove)
         .on("mouseout", handleMouseOut);
     });
@@ -178,7 +176,7 @@ const CDTmap = ({ user }) => {
         })
         .attr("fill", colors.messages)
         .attr("stroke", "none")
-        .on("mouseover", handleMouseOver)
+        .on("mouseover", handleMouseOver(user))
         .on("mousemove", handleMouseMove)
         .on("mouseout", handleMouseOut);
 
@@ -195,7 +193,7 @@ const CDTmap = ({ user }) => {
         })
         .attr("fill", colors.campSites)
         .attr("stroke", "none")
-        .on("mouseover", handleMouseOver)
+        .on("mouseover", handleMouseOver(user))
         .on("mousemove", handleMouseMove)
         .on("mouseout", handleMouseOut);
     });
@@ -203,33 +201,32 @@ const CDTmap = ({ user }) => {
     /* -----------------------------------------------------
     *  Take the cleaned photo geojson data and plot it
     ----------------------------------------------------- */
-    if (user) {
-      d3.json("geoPhotos.geojson").then((photoData) => {
-        const points = photoData.features.filter(
-          (d) =>
-            d.geometry?.type === "Photo" &&
-            Array.isArray(d.geometry.coordinates) &&
-            d.geometry.coordinates.length === 2
-        );
-        const validPhotoPoints = points.filter((d) =>
-          projection(d.geometry.coordinates)
-        );
 
-        g.selectAll(".photoPoints")
-          .data(validPhotoPoints)
-          .enter()
-          .append("circle")
-          .attr("class", "photoPoints")
-          .attr("cx", (d) => projection(d.geometry.coordinates)[0])
-          .attr("cy", (d) => projection(d.geometry.coordinates)[1])
-          .attr("r", 6)
-          .attr("fill", colors.photos)
-          .attr("stroke", "none")
-          .on("mouseover", handleMouseOver)
-          .on("mousemove", handleMouseMove)
-          .on("mouseout", handleMouseOut);
-      });
-    }
+    d3.json("geoPhotos.geojson").then((photoData) => {
+      const points = photoData.features.filter(
+        (d) =>
+          d.geometry?.type === "Photo" &&
+          Array.isArray(d.geometry.coordinates) &&
+          d.geometry.coordinates.length === 2
+      );
+      const validPhotoPoints = points.filter((d) =>
+        projection(d.geometry.coordinates)
+      );
+
+      g.selectAll(".photoPoints")
+        .data(validPhotoPoints)
+        .enter()
+        .append("circle")
+        .attr("class", "photoPoints")
+        .attr("cx", (d) => projection(d.geometry.coordinates)[0])
+        .attr("cy", (d) => projection(d.geometry.coordinates)[1])
+        .attr("r", 6)
+        .attr("fill", colors.photos)
+        .attr("stroke", "none")
+        .on("mouseover", handleMouseOver(user))
+        .on("mousemove", handleMouseMove)
+        .on("mouseout", handleMouseOut);
+    });
 
     /* -----------------------------------------------------
     *  City data

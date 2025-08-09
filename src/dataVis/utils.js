@@ -48,35 +48,42 @@ export function haversineDistance([lon1, lat1], [lon2, lat2]) {
  * @returns
  */
 
-export function handleMouseOver(event, d) {
-  // console.log(user)/;
-  if (!d) {
-    return;
-  }
-  const tooltip = document.getElementById("tooltip");
-
-  if (d.geometry && d.geometry.type) {
-    const { type } = d.geometry;
-    if (type === "Point") {
-      // inreach data point, display its date
-      const { MessageText } = d.properties;
-      const messageDate = new Date(d.properties.GPSTime);
-      const messageDateString = dateTimeFormatter.format(messageDate);
-      tooltip.innerHTML = ` <p>Message Date: ${messageDateString}</p><br /><p>${MessageText}</p>`;
-      tooltip.style.display = "block";
-    } else if (type === "LineString") {
-      // trail route, display it's leg name
-      const legNum = d.properties.title;
-      const legName = d.properties.description;
-      tooltip.innerHTML = ` <p>Leg #${legNum}: ${legName}<p>`;
-      tooltip.style.display = "block";
-    } else if (type === "Photo") {
-      // Photopoint, display it's leg name
-      const { path, dateTime } = d.properties;
-      tooltip.innerHTML = `<img src="${path}" width="550"><br /><p>Message Date: ${dateTime}</p>`;
-      tooltip.style.display = "block";
+export function handleMouseOver(currentUser = null) {
+  return function handleMouseOver(event, d) {
+    if (!d) {
+      return;
     }
-  }
+    const tooltip = document.getElementById("tooltip");
+
+    if (d.geometry && d.geometry.type) {
+      const { type } = d.geometry;
+      if (type === "Point") {
+        // inreach data point, display its date
+        const { MessageText } = d.properties;
+        const messageDate = new Date(d.properties.GPSTime);
+        const messageDateString = dateTimeFormatter.format(messageDate);
+
+        // Only show full message if correct user
+        const displayText =
+          currentUser && currentUser.email === "katy@gmail.com"
+            ? MessageText
+            : "Message hidden";
+        tooltip.innerHTML = `<p>${displayText}</p><p>Date: ${messageDateString}</p>`;
+        tooltip.style.display = "block";
+      } else if (type === "LineString") {
+        // trail route, display it's leg name
+        const legNum = d.properties.title;
+        const legName = d.properties.description;
+        tooltip.innerHTML = ` <p>Leg #${legNum}: ${legName}<p>`;
+        tooltip.style.display = "block";
+      } else if (type === "Photo") {
+        // Photopoint, display it
+        const { path, dateTime } = d.properties;
+        tooltip.innerHTML = `<img src="${path}" width="550"><br /><p> Date: ${dateTime}</p>`;
+        tooltip.style.display = "block";
+      }
+    }
+  };
 }
 
 export function handleMouseMove(event) {
