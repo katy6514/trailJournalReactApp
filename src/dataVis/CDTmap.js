@@ -63,10 +63,7 @@ const CDTmap = ({ user }) => {
         g.selectAll(".campPoints").attr("d", zoomableTriangle);
         g.selectAll(".messagePoints").attr("d", zoomableSquare);
         g.selectAll(".cityPoints").attr("d", zoomableCross);
-        g.selectAll(".uploadedTrail").attr(
-          "stroke-width",
-          2 / event.transform.k
-        );
+        g.selectAll(".trail").attr("stroke-width", 2 / event.transform.k);
       });
 
     svg.call(zoom);
@@ -75,6 +72,27 @@ const CDTmap = ({ user }) => {
       if (!event.target.classList.contains("state-clickable")) {
         svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
       }
+    });
+
+    /* -----------------------------------------------------
+    *  Track mapping functionality
+    ----------------------------------------------------- */
+
+    d3.json("/CDT_complete_tracks.json").then((data) => {
+      console.log(data); // inspect structure
+      g.selectAll(".trail")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr("class", "trail")
+        .attr("d", d3.geoPath().projection(projection))
+        .attr("fill", "none")
+        .attr("stroke", (d) => getAlternatingColor(d.properties))
+        .attr("stroke-width", 2)
+        .attr("fill", "none")
+        .on("mouseover", handleMouseOver)
+        .on("mousemove", handleMouseMove)
+        .on("mouseout", handleMouseOut);
     });
 
     /* -----------------------------------------------------
@@ -340,64 +358,6 @@ const CDTmap = ({ user }) => {
       .style("font-size", "15px")
       .attr("alignment-baseline", "middle");
   }, [path, projection, user]);
-
-  /* -----------------------------------------------------
-    *  Plotting route Data
-    ----------------------------------------------------- */
-
-  useEffect(() => {
-    if (!projection || !path || !gRef.current) {
-      console.warn("Projection or path not ready");
-      return;
-    }
-    // const g = d3.select("#CDTmap").select("g.mapLayer");
-    const g = gRef.current;
-    if (g.empty()) {
-      console.warn("g.mapLayer not found — map not ready yet");
-      return;
-    }
-
-    const fetchTrails = async () => {
-      const snapshot = await getDocs(collection(db, "trails"));
-
-      const trailList = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      if (trailList.length === 0) return;
-
-      const { featuresJson } = trailList[trailList.length - 1]; // Get the last uploaded trail dataset
-      if (featuresJson) {
-        try {
-          // const features = JSON.parse(featuresJson);
-          const features = JSON.parse(featuresJson).filter(
-            (f) =>
-              f.geometry &&
-              f.geometry.type === "LineString" &&
-              Array.isArray(f.geometry.coordinates) &&
-              f.geometry.coordinates.length > 1
-          );
-          g.selectAll(".uploadedTrail").remove(); // Clear previous
-
-          g.selectAll(".uploadedTrail")
-            .data(features)
-            .enter()
-            .append("path")
-            .attr("class", "uploadedTrail")
-            .attr("d", path)
-            .attr("stroke", (d) => getAlternatingColor(d.properties))
-            .attr("stroke-width", 2)
-            .attr("fill", "none")
-            .on("mouseover", handleMouseOver)
-            .on("mousemove", handleMouseMove)
-            .on("mouseout", handleMouseOut);
-        } catch (err) {
-          console.error("Failed to parse trail JSON", err);
-        }
-      }
-    };
-    fetchTrails();
-  }, [db, projection, path, gRef.current]);
 
   return <svg ref={ref}></svg>;
 };
